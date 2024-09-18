@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block header_extra %}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+{% endblock %} {% block script %}
+<script>
+  hljs.highlightAll();
+</script>
+{% endblock %} {% block content %}
+<div class="bg-white md:rounded-lg shadow">
+  <div>
+    <img
+      class="md:rounded-t-lg max-h-96"
+      src="../{{ essay.path }}/cover.png"
+      alt=""
+    />
+  </div>
+  <div class="p-5">
+    <h2 class="font-semibold text-3xl">{{ essay.title }}</h2>
+    <hr class="my-2" />
+    <ul class="mt-6">
+      {% for tag in essay.tags %}
+      <li style="display: inline-block !important" class="my-4">
+        <span
+          class="no-underline bg-gray-100 hover:bg-gray-200 text-gray-500 text-sm py-2 px-2 rounded"
+          >{{ tag }}</span
+        >
+      </li>
+      {% endfor %}
+    </ul>
+    <article class="markdown-body regular-list mt-5">
+      {{ content|safe }}
+    </article>
+    <hr class="my-2" />
+    <div class="mt-6">
+      <a
+        href="/essays/"
+        class="no-underline bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 rounded"
+        ><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

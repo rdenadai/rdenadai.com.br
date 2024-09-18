@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rdenadai.com.br</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+      integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css"
+      integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.6.1/github-markdown-light.min.css"
+      integrity="sha512-SLv8CNVAxhcbDQfwc9dS5OuZAAYqdTGJTBSUtKNQbCUO2gMno4Fp2Vn8Xsvj993RcofNfj2d5JA0jYBve4SEXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    {% block header_extra %}{% endblock %}
+    <style>
+      html,
+      body,
+      code {
+        font-family: "Fira Code", monospace;
+      }
+      .regular-list ul
+      {
+        list-style: initial;
+        margin: initial;
+        padding: 0 0 0 40px;
+      }
+      .regular-list ul li
+      {
+        display: list-item;
+      }
+      .regular-list ol
+      {
+        list-style-type:decimal;
+        margin: initial;
+        padding: 0 0 0 40px;
+      }
+      .regular-list ol li
+      {
+        display: list-item;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center" style="max-width: 1024px">
+        <h1 class="text-3xl uppercase font-semibold">Rodolfo De Nadai</h1>
+        <nav aria-label="Social Media Links"></nav>
+          <ul class="flex space-x-4">
+            <li>
+              <a
+                href="https://github.com/rdenadai"
+                target="_blank"
+                class="text-white text-2xl hover:text-gray-400"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://br.linkedin.com/in/rdenadai"
+                target="_blank"
+                class="text-white text-2xl hover:text-gray-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <nav
+      class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" 
+      aria-label="Main Navigation"
+    >
+      <ul class="container mx-auto flex flex-wrap -mb-px"  style="max-width: 1024px">
+        <li class="me-2">
+          <a
+            href="/essays"
+            aria-current="page"
+            class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.essays }}"
+            ><span class="font-semibold text-xl">Essays</span></a
+          >
+        </li>
+        <li class="me-2">
+          <a
+            href="/profile"
+            class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.profile }}"
+            ><span class="font-semibold text-xl">Profile</span></a
+          >
+        </li>
+        <li class="me-2">
+          <a
+            href="/resume"
+            class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.resume }}"
+            ><span class="font-semibold text-xl">Resume</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="container mx-auto" style="max-width: 1024px">
+      <div class="md:my-5">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </body>
+  {% block script %}{% endblock %}
+</html>
