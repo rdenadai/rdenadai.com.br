@@ -28,7 +28,7 @@ async def homepage(request):
 async def essays(request):
     page = int(request.query_params.get("page", 1))
 
-    about_md = markdown.markdown(await async_file_loader("static/pages/about.md"), tab_length=2)
+    about_md = markdown.markdown(await async_file_loader("static/pages/README.md"), tab_length=2)
 
     essays = await load_essays_data()
 
@@ -59,7 +59,7 @@ async def essays(request):
 async def essay(request):
     essay_id = int(request.path_params.get("essay", 1))
     essay = next(essay for essay in await load_essays_data() if essay.get("id") == essay_id)
-    content = markdown.markdown(await async_file_loader(f"static/pages/essays/{essay_id}/index.md"), tab_length=2)
+    content = markdown.markdown(await async_file_loader(f"static/pages/essays/{essay_id}/README.md"), tab_length=2)
 
     return TEMPLATES.TemplateResponse(
         request,
@@ -79,7 +79,7 @@ async def essay(request):
 
 
 async def profile(request):
-    profile = markdown.markdown(await async_file_loader("static/pages/profile/index.md"), tab_length=2)
+    profile = markdown.markdown(await async_file_loader("static/pages/profile/README.md"), tab_length=2)
 
     return TEMPLATES.TemplateResponse(
         request,
@@ -98,7 +98,7 @@ async def profile(request):
 
 
 async def resume(request):
-    resume = markdown.markdown(await async_file_loader("static/pages/resume/index.md"), tab_length=2)
+    resume = markdown.markdown(await async_file_loader("static/pages/resume/README.md"), tab_length=2)
 
     return TEMPLATES.TemplateResponse(
         request,

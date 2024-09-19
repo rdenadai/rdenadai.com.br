@@ -111,5 +111,13 @@
         "published": false,
         "created_at": "2024-09-20",
         "tags": ["ai", "machine learning", "knowledge", "self-organizing map", "som", "clustering"]
+    }, {
+        "id": 15,
+        "path": "static/pages/essays/15",
+        "title": "Does AI generate art?",
+        "description": "Much has been discussed about AI and art. But, can AI really generate art?",
+        "published": false,
+        "created_at": "2024-09-20",
+        "tags": ["ai", "machine learning", "knowledge", "human creativity", "art"]
     }
 ]
