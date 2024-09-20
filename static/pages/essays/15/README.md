@@ -47,7 +47,7 @@ If you known Neural Networks and their process, in a way some of the steps are t
 - [Wikipedia : Self-organizing map][7]
 - [Introduction to Self-Organizing Maps (SOMs)][8]
 
-[1]: /static/pages/essays/14/kohonen.gif
+[1]: /static/pages/essays/15/kohonen.gif
 [2]: https://github.com/rdenadai/AI-Study-Notebooks/blob/master/code/som/som.py
 [3]: https://github.com/JustGlowing/minisom
 [4]: https://github.com/sevamoo/SOMPY
