@@ -1,4 +1,26 @@
-{% extends "base.html" %} {% block header_extra %}
+{% extends "base.html" %} {% block header_card %}
+<meta name="title" content="{{ essay.title }}" />
+<meta name="description" content="{{ essay.description }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ essay.title }}" />
+<meta property="og:description" content="{{ essay.description }}" />
+<meta property="og:url" content="https://rdenadai.com.br/essay/{{ essay.id}}" />
+<meta
+  property="og:image"
+  content="https://rdenadai.com.br/{{ essay.path }}/cover.png"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ essay.title }}" />
+<meta name="twitter:description" content="{{ essay.description }}" />
+<meta
+  name="twitter:site"
+  content="https://rdenadai.com.br/essay/{{ essay.id}}"
+/>
+<meta
+  name="twitter:image"
+  content="https://rdenadai.com.br/{{ essay.path }}/cover.png"
+/>
+{% endblock %} {% block header_extra %}
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
