@@ -1,0 +1,141 @@
+{% extends "base.html" %} {% block header_card %}
+<meta name="title" content="{{ data.title }}" />
+<meta name="description" content="{{ data.description }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ data.title }}" />
+<meta property="og:description" content="{{ data.description }}" />
+<meta
+  property="og:url"
+  content="https://rdenadai.com.br/ai-hype-sanity-check"
+/>
+<meta
+  property="og:image"
+  content="https://rdenadai.com.br/static/img/ai_cover.png"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ data.title }}" />
+<meta name="twitter:description" content="{{ data.description }}" />
+<meta
+  name="twitter:site"
+  content="https://rdenadai.com.br/ai-hype-sanity-check"
+/>
+<meta
+  name="twitter:image"
+  content="https://rdenadai.com.br/static/img/ai_cover.png"
+/>
+{% endblock %} {% block content %}
+<div class="bg-white md:rounded-lg shadow">
+  <div>
+    <img
+      class="md:rounded-t-lg max-h-96"
+      src="/static/img/ai_cover.png"
+      alt=""
+    />
+  </div>
+  <div class="p-10">
+    <div class="text-center">
+      <div><h2 class="text-2xl font-semibold">{{data.title}}</h2></div>
+      <div class="mt-5 text-justify">
+        <span class="text-gray-500 text-md">{{data.description}}</span>
+      </div>
+      <form id="questionnaire" action="#" class="text-md">
+        {% for question in data.questionnaire %} {% set outer_loop = loop %}
+        <div>
+          <div class="mt-10">
+            <span class="flex mb-5 text-left font-semibold"
+              >{{ outer_loop.index }}. {{ question.question }}</span
+            >
+            {% for answer in question.answers %}
+            <div class="flex">
+              <label
+                class="relative flex items-center p-3 rounded-full cursor-pointer"
+                htmlFor="blue"
+              >
+                <input
+                  type="radio"
+                  id="{{outer_loop.index}}-{{loop.index}}"
+                  name="{{ outer_loop.index }}"
+                  value="{{ answer.score }}"
+                  onclick="handleQuestionSelection({{outer_loop.index}}, {{answer.score}})"
+                  class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
+                  id="blue"
+                />
+                <span
+                  class="absolute text-blue-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-3.5 w-3.5"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                  >
+                    <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+                  </svg>
+                </span>
+              </label>
+              &nbsp;
+              <label
+                class="text-left mt-3 cursor-pointer"
+                for="{{outer_loop.index}}-{{loop.index}}"
+                >{{ answer.text }}</label
+              >
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+        <div id="showError" class="mt-5 hidden bg-red-100 px-10 py-10 rounded">
+          <span class="text-red-500 font-semibold"
+            >{{ data.errorMessage }}</span
+          >
+        </div>
+        <hr class="mt-5" />
+        <button
+          type="submit"
+          class="bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 mt-5 rounded"
+        >
+          Get Your Results
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block script %}
+<script>
+  const answers = {};
+  const profiles = {{ data.profiles|safe }} ?? [];
+
+  const handleQuestionSelection = (idx, score) => {
+    answers[idx + 1] = score;
+  }
+
+  const handleQuestionaireSubmit = () => {
+    const totalScore = Object.values(answers)?.reduce((acc, curr) => acc + curr, 0) ?? 0;
+    if (Object.keys(answers)?.length == 10 && totalScore > 0) {
+      profile = profiles?.find(profile => {
+        if (totalScore >= profile.min_score && totalScore <= profile.max_score) {
+          return profile;
+        }
+      });
+      if(profile) {
+        window.location.assign(`/ai-hype-sanity-check/result/${profile.id}/${totalScore}`);
+      }
+    } else {
+      const showError = document.getElementById("showError");
+      showError.classList.remove("hidden");
+      showError.classList.add("block");
+
+      setTimeout(() => {
+        showError.classList.remove("block");
+        showError.classList.add("hidden");
+      }, 3000);
+    }
+  }
+
+  const form = document.getElementById("questionnaire");
+  form.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+    handleQuestionaireSubmit()
+  });
+</script>
+{% endblock %}

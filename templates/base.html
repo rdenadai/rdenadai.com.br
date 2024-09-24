@@ -6,19 +6,13 @@
     <title>rdenadai.com.br</title>
     {% block header_card %}{% endblock %}
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
-      integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      defer
-    ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css"
       integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     />
     <link
       rel="stylesheet"
@@ -26,6 +20,7 @@
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     />
     <link
       rel="stylesheet"
@@ -36,10 +31,8 @@
     />
     {% block header_extra %}{% endblock %}
     <style>
-      html,
-      body,
-      code {
-        font-family: "Fira Code", monospace;
+      html, body, code, pre, p, h1, h2, h3, h4, h5, h6, ul, ol, li, a, hr, blockquote, table, tr, th, td{
+        font-family: "Fira Code", monospace !important;
       }
       .regular-list ul
       {
@@ -116,6 +109,13 @@
             href="/resume"
             class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.resume }}"
             ><span class="font-semibold text-xl">Resume</span></a
+          >
+        </li>
+        <li class="me-2">
+          <a
+            href="/ai-hype-sanity-check"
+            class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.ai }}"
+            ><span class="font-semibold text-xl">AI Hype Sanity Check</span></a
           >
         </li>
       </ul>

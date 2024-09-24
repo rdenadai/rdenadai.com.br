@@ -14,20 +14,31 @@ CSS_TABS = MappingProxyType(
                 "essays": CSSTab.active.value,
                 "profile": CSSTab.deactive.value,
                 "resume": CSSTab.deactive.value,
+                "ai": CSSTab.deactive.value,
             }
         },
         "profile": {
             "tab": {
-                "essays": CSSTab.deactive.value,
                 "profile": CSSTab.active.value,
+                "essays": CSSTab.deactive.value,
                 "resume": CSSTab.deactive.value,
+                "ai": CSSTab.deactive.value,
             }
         },
         "resume": {
             "tab": {
+                "resume": CSSTab.active.value,
                 "essays": CSSTab.deactive.value,
                 "profile": CSSTab.deactive.value,
-                "resume": CSSTab.active.value,
+                "ai": CSSTab.deactive.value,
+            }
+        },
+        "ai": {
+            "tab": {
+                "ai": CSSTab.active.value,
+                "essays": CSSTab.deactive.value,
+                "profile": CSSTab.deactive.value,
+                "resume": CSSTab.deactive.value,
             }
         },
     }

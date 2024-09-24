@@ -1,3 +1,5 @@
+from uuid import UUID
+
 import markdown
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
@@ -7,6 +9,7 @@ from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
+from src.data import QUESTIONS_AI_DATA
 from src.schema import CSS_TABS
 from src.utils import async_file_loader, load_essays_data
 
@@ -45,15 +48,18 @@ async def essays(request):
 
 
 async def essay(request):
-    essay_id = int(request.path_params.get("essay", 1))
-    essay = next(essay for essay in await load_essays_data() if essay.get("id") == essay_id)
-    content = markdown.markdown(await async_file_loader(f"static/pages/essays/{essay_id}/README.md"), tab_length=2)
+    try:
+        essay_id = int(request.path_params.get("essay", 1))
+        essay = next(essay for essay in await load_essays_data() if essay.get("id") == essay_id)
+        content = markdown.markdown(await async_file_loader(f"static/pages/essays/{essay_id}/README.md"), tab_length=2)
 
-    return TEMPLATES.TemplateResponse(
-        request,
-        "pages/essay.html",
-        {"essay": essay, "content": content, "css": CSS_TABS.get("essays")},
-    )
+        return TEMPLATES.TemplateResponse(
+            request,
+            "pages/essay.html",
+            {"essay": essay, "content": content, "css": CSS_TABS.get("essays")},
+        )
+    except Exception:
+        return RedirectResponse(url="/essays")
 
 
 async def profile(request):
@@ -76,12 +82,49 @@ async def resume(request):
     )
 
 
+async def ai_hype_sanity_check(request):
+
+    return TEMPLATES.TemplateResponse(
+        request,
+        "pages/ai-hype-sanity-check/index.html",
+        {"data": QUESTIONS_AI_DATA, "css": CSS_TABS.get("ai")},
+    )
+
+
+async def ai_hype_sanity_check_result(request):
+    try:
+        profile_id = str(UUID(request.path_params.get("profile", "")))
+        score = int(request.path_params.get("score", 0))
+
+        return TEMPLATES.TemplateResponse(
+            request,
+            "pages/ai-hype-sanity-check/profile.html",
+            {
+                "profile": next(
+                    filter(
+                        lambda profile: profile.get("id") == profile_id
+                        and score >= profile.get("min_score")
+                        and score <= profile.get("max_score"),
+                        QUESTIONS_AI_DATA.get("profiles"),
+                    )
+                ),
+                "score": score,
+                "css": CSS_TABS.get("ai"),
+            },
+        )
+    except Exception:
+        return RedirectResponse(url="/ai-hype-sanity-check")
+
+
 routes = [
     Route("/", endpoint=index),
+    Route("/robots.txt", endpoint=RedirectResponse(url="/static/robots.txt")),
     Route("/essays", endpoint=essays),
     Route("/essay/{essay}", endpoint=essay),
     Route("/profile", endpoint=profile),
     Route("/resume", endpoint=resume),
+    Route("/ai-hype-sanity-check", endpoint=ai_hype_sanity_check),
+    Route("/ai-hype-sanity-check/result/{profile}/{score}", endpoint=ai_hype_sanity_check_result),
     Mount("/static", StaticFiles(directory="static"), name="static"),
 ]
 

@@ -1,0 +1,90 @@
+{% extends "base.html" %} {% block header_card %}
+<meta name="title" content="{{ profile.name }}" />
+<meta name="description" content="{{ profile.description }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ profile.name }}" />
+<meta property="og:description" content="{{ profile.description }}" />
+<meta
+  property="og:url"
+  content="https://rdenadai.com.br/ai-hype-sanity-check/result/{{ profile.id}}/{{ score }}"
+/>
+<meta
+  property="og:image"
+  content="https://rdenadai.com.br/static/img/ai_hype_sanity_check/{{profile.id}}.png"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ profile.name }}" />
+<meta name="twitter:description" content="{{ profile.description }}" />
+<meta
+  name="twitter:site"
+  content="https://rdenadai.com.br/ai-hype-sanity-check/result/{{ profile.id}}/{{ score }}"
+/>
+<meta
+  name="twitter:image"
+  content="https://rdenadai.com.br/static/img/ai_hype_sanity_check/{{profile.id}}.png"
+/>
+{% endblock %} {% block content %}
+<div class="bg-white md:rounded-lg shadow">
+  <div class="p-5 md:p-10">
+    <div class="text-center">
+      <div class="flex flex-col lg:flex-row">
+        <div class="grid place-content-center mb-5 lg:mb-0 lg:mr-5">
+          <span
+            class="font-semibold text-4xl text-white bg-blue-900 p-5 rounded-lg"
+            >{{ score }}</span
+          >
+        </div>
+        <div>
+          <h1 class="flex flex-col md:flex-row font-semibold text-left">
+            <span class="text-2xl md:text-4xl">{{ profile.name }}</span>
+            <span class="flex items-center md:mx-1"
+              >({{ profile.min_score}} - {{ profile.max_score }} pts)</span
+            >
+          </h1>
+          <p class="text-justify">{{ profile.description }}</p>
+        </div>
+      </div>
+      <div class="flex place-content-center mt-5">
+        <img
+          src="/static/img/ai_hype_sanity_check/{{profile.id}}.png"
+          alt="{{profile.description}}"
+        />
+      </div>
+      <button
+        class="bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 mt-5 rounded"
+      >
+        Share on Social Media
+      </button>
+      <div
+        id="alert"
+        class="bg-green-500 text-white p-2 rounded fixed bottom-40 left-1/2 transform -translate-x-1/2 opacity-90 px-20 hidden"
+      ></div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block script %}
+<script>
+  const alertBox = document.getElementById("alert");
+
+  function showAlert(message) {
+    alertBox.innerHTML = `<span>${message}</span>`;
+    alertBox.classList.remove("hidden");
+    setTimeout(() => {
+      alertBox.innerHTML = "";
+      alertBox.classList.add("hidden");
+    }, 2000);
+  }
+
+  document.querySelector("button").addEventListener("click", function () {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(
+      function () {
+        showAlert("URL copied to clipboard");
+      },
+      function (err) {
+        console.error("Could not copy text: ", err);
+      }
+    );
+  });
+</script>
+{% endblock %}
