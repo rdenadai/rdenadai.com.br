@@ -1,5 +1,3 @@
-from enum import StrEnum
-
 import markdown
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
@@ -9,6 +7,7 @@ from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
+from src.schema import CSS_TABS
 from src.utils import async_file_loader, load_essays_data
 
 N_PAGE = 5
@@ -16,12 +15,7 @@ N_PAGE = 5
 TEMPLATES = Jinja2Templates(directory="templates")
 
 
-class CSSTab(StrEnum):
-    active: str = "text-blue-900 border-blue-900active dark:text-blue-900 dark:border-blue-900"
-    deactive: str = "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-
-
-async def homepage(request):
+async def index(request):
     return RedirectResponse(url="/essays")
 
 
@@ -45,13 +39,7 @@ async def essays(request):
             "page": page,
             "previous": page - 1 if page - 1 > 0 else 0,
             "next": page + 1 if has_more_essays else 0,
-            "css": {
-                "tab": {
-                    "essays": CSSTab.active.value,
-                    "profile": CSSTab.deactive.value,
-                    "resume": CSSTab.deactive.value,
-                }
-            },
+            "css": CSS_TABS.get("essays"),
         },
     )
 
@@ -64,17 +52,7 @@ async def essay(request):
     return TEMPLATES.TemplateResponse(
         request,
         "pages/essay.html",
-        {
-            "essay": essay,
-            "content": content,
-            "css": {
-                "tab": {
-                    "essays": CSSTab.active.value,
-                    "profile": CSSTab.deactive.value,
-                    "resume": CSSTab.deactive.value,
-                }
-            },
-        },
+        {"essay": essay, "content": content, "css": CSS_TABS.get("essays")},
     )
 
 
@@ -84,16 +62,7 @@ async def profile(request):
     return TEMPLATES.TemplateResponse(
         request,
         "pages/profile.html",
-        {
-            "profile": profile,
-            "css": {
-                "tab": {
-                    "essays": CSSTab.deactive.value,
-                    "profile": CSSTab.active.value,
-                    "resume": CSSTab.deactive.value,
-                }
-            },
-        },
+        {"profile": profile, "css": CSS_TABS.get("profile")},
     )
 
 
@@ -103,21 +72,12 @@ async def resume(request):
     return TEMPLATES.TemplateResponse(
         request,
         "pages/resume.html",
-        {
-            "resume": resume,
-            "css": {
-                "tab": {
-                    "essays": CSSTab.deactive.value,
-                    "profile": CSSTab.deactive.value,
-                    "resume": CSSTab.active.value,
-                }
-            },
-        },
+        {"resume": resume, "css": CSS_TABS.get("resume")},
     )
 
 
 routes = [
-    Route("/", endpoint=homepage),
+    Route("/", endpoint=index),
     Route("/essays", endpoint=essays),
     Route("/essay/{essay}", endpoint=essay),
     Route("/profile", endpoint=profile),

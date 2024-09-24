@@ -13,5 +13,5 @@ ENV UV_TOOL_BIN_DIR=/root/.cargo/bin/
 ENV PATH=$UV_TOOL_BIN_DIR:$PATH
 RUN uv sync
 
-ENTRYPOINT ["dumb-init", "--"]
-CMD ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ["dumb-init", "--"]
+# CMD ["tail", "-f", "/dev/null"]
