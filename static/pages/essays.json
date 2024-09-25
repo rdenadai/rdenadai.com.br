@@ -114,6 +114,14 @@
     }, {
         "id": 15,
         "path": "static/pages/essays/15",
+        "title": "Python Expert Path",
+        "description": "A simple, but hopefully useful guide to become a Python expert.",
+        "published": true,
+        "created_at": "2024-09-24",
+        "tags": ["python", "learning", "study", "books", "knowledge", "motivation"]
+    }, {
+        "id": 16,
+        "path": "static/pages/essays/16",
         "title": "Self-Organizing Map (Kohonen Map)",
         "description": "An unsupervised machine learning algorithm based on the premise that neurons closer to the data in a high-dimensional space can be represented as a 2D mapping surface.",
         "published": false,
