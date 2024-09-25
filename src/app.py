@@ -11,7 +11,7 @@ from starlette.templating import Jinja2Templates
 
 from src.data import QUESTIONS_AI_DATA
 from src.schema import CSS_TABS
-from src.utils import async_file_loader, load_essays_data
+from src.utils import async_file_loader, get_posted_at, load_essays_data
 
 N_PAGE = 5
 
@@ -56,7 +56,12 @@ async def essay(request):
         return TEMPLATES.TemplateResponse(
             request,
             "pages/essay.html",
-            {"essay": essay, "content": content, "css": CSS_TABS.get("essays")},
+            {
+                "essay": essay,
+                "posted_at": get_posted_at(essay.get("created_at")),
+                "content": content,
+                "css": CSS_TABS.get("essays"),
+            },
         )
     except Exception:
         return RedirectResponse(url="/essays")
