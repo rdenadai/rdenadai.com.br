@@ -14,7 +14,7 @@
         "description": "SThis is a brief insight about the rush and how we waste time trying to achieve more in less time. <br />Is this truly an essential quality in our society?",
         "published": true,
         "created_at": "2016-01-23",
-        "tags": ["live", "work", "knowledge", "motivation"]
+        "tags": ["life", "work", "knowledge", "motivation"]
     }, {
         "id": 3,
         "path": "static/pages/essays/3",
@@ -22,7 +22,7 @@
         "description": "This is a small thought about future of our world in terms of ourselves.",
         "published": true,
         "created_at": "2016-03-16",
-        "tags": ["live", "work", "knowledge", "science", "technology"]
+        "tags": ["life", "work", "knowledge", "science", "technology"]
     }, {
         "id": 4,
         "path": "static/pages/essays/4",
@@ -122,6 +122,14 @@
     }, {
         "id": 16,
         "path": "static/pages/essays/16",
+        "title": "Os 12 Mandamentos da Sagrada #bolhaDev",
+        "description": "Eis aqui os 12 mandamentos da sagrada #bolhaDev. Ao longo dos anos muito foi sendo discutido, principalmente, no Twitter o que era bom ou ruim dentro da bolha de desenvolvimento.<br /> Esse é apenas um apanhado de 12 principais pontos que sempre foram colocados como pau de conversa e discórdia.",
+        "published": true,
+        "created_at": "2024-09-25",
+        "tags": ["life", "work", "fun", "bolhaDev"]
+    }, {
+        "id": 17,
+        "path": "static/pages/essays/17",
         "title": "Self-Organizing Map (Kohonen Map)",
         "description": "An unsupervised machine learning algorithm based on the premise that neurons closer to the data in a high-dimensional space can be represented as a 2D mapping surface.",
         "published": false,

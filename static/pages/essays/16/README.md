@@ -1,57 +1,83 @@
-# Self-organizing map (Kohonen Map)
+<div class="flex justify-center items-center">
+<img src="/static/pages/essays/16/the-ten-commandments-moses.gif" alt="Os 10 Mandamentos do Dev" width="100%" class="rounded" />
+</div>
 
-### Description
+---
 
-The Self-organizing map (also know as Kohonen Map) were thought by Teuvo Kohonen in the early 90's. The idea is to use a type of "Neural Network" to generate a small latent space (dimension) using a unsupervised approach.
+### **1º Mandamento: `Jamais Serás Coda Fofo!`**
 
-Given this, the overall idea is that the map is built using units ("neurons") that are placed in the latent space of the data, than, for each iteration, some units will get closer to the nearest data point and units that are closer to that one will get a little closer.
+Em verdade vos digo: quem escreve código sem usar Vim ou Emacs não é digno do terminal. Coda fofo é aquele que usa IDEs com botões e mouse. Que assim seja, o verdadeiro dev vive no terminal e nada mais.
 
-Image bellow demonstrate the SOM map (SizeX by Sizey) and it's mapping using weight w<sub>ij</sub> given the points in their latent space given by x<sub>n</sub>.
+![coda fofo](/static/pages/essays/16/image.png)
 
-![SOM application][1]
+> cc [diegopatas.codafofo.club](https://bsky.app/profile/diegopatas.codafofo.club)
 
-### Algorithm
+---
 
-At a higher level the algorithm work following the steps:
+### **2º Mandamento: `Rejeitarás o ORM com Todo Teu Coração!`**
 
-- Initialize a 2D map
-- for each epoch do:
-  - Randomly select a sample
-  - Calculate and get the BMU (Best match unit)
-  - Given the BMU calculate the neighbors
-  - Update the learning rate
+Os ORMs são as tentações do diabo, te afastando da verdadeira fé no SQL puro. Quem ama a base de dados escreve suas próprias queries, pois o caminho da salvação é feito de joins, group bys e subqueries.
 
-If you known Neural Networks and their process, in a way some of the steps are the same (just a few of them of course).
+---
 
-#### **Code Example**
+### **3º Mandamento: `Odiarás o Agile com Fervor!`**
 
-<pre><code class="language-python">
+Agile, Scrum, e seus derivados são a praga do século. Eles falam de sprints, mas corremos maratonas. Bem-aventurados são os que trabalham no caos e na liberdade do “deixa comigo”.
 
-</code></pre>
+---
 
-[My SOM Implementation][2]
+### **4º Mandamento: `Else Não Escreverás!`**
 
-### Libraries
+Assim como não há bifurcação no caminho do iluminado, não deve haver "else" no teu código. Se o "if" não resolver, que uma função resolva. Else é para os fracos e indecisos.
 
-- [**Minisom**][3] : "_MiniSom is a minimalistic implementation of the Self Organizing Maps._"
+---
 
-- [**SOMPY**][4] : "_A Python Library for Self Organizing Map (SOM)_"
+### **5º Mandamento: `API REST é Inútil, Somente Get e Post Deves Usar!`**
 
-### Papers
+Complexidade demais é coisa de herege. O dev de verdade só precisa de GET e POST. Tudo mais é capricho e desperdício de banda. Que seja assim o código dos justos.
 
-- [The self-organizing map][5]
-- [Essentials of the self-organizing map][6]
+---
 
-### Links
+### **6º Mandamento: `Serás PJ, Pois a CLT é para os Infiéis!`**
 
-- [Wikipedia : Self-organizing map][7]
-- [Introduction to Self-Organizing Maps (SOMs)][8]
+O verdadeiro dev vive na liberdade do PJ, onde o código é seu e de mais ninguém. CLT é para aqueles que temem o desafio e buscam o conforto dos benefícios. Viva na autonomia e no poder dos contratos!
 
-[1]: /static/pages/essays/16/kohonen.gif
-[2]: https://github.com/rdenadai/AI-Study-Notebooks/blob/master/code/som/som.py
-[3]: https://github.com/JustGlowing/minisom
-[4]: https://github.com/sevamoo/SOMPY
-[5]: https://ieeexplore.ieee.org/abstract/document/58325
-[6]: https://www.sciencedirect.com/science/article/abs/pii/S0893608012002596
-[7]: https://en.wikipedia.org/wiki/Self-organizing_map
-[8]: https://heartbeat.fritz.ai/introduction-to-self-organizing-maps-soms-98e88b568f5d
+---
+
+### **7º Mandamento: `Faculdade Não é Necessária para Aquele que Crê!`**
+
+A faculdade é um rito de passagem para os fracos. Quem tem fé no Stack Overflow, no GitHub e nas documentações não precisa de diploma. O conhecimento está em todo lugar, menos na sala de aula.
+
+---
+
+### **8º Mandamento: `Aprenderás a Base da TI e Estarás Iluminado!`**
+
+Assim como os alicerces de uma casa, a base da TI sustenta tudo. Conheça os fundamentos da computação, as redes, os sistemas operacionais e serás inabalável. O hardware e o software básico são as chaves para o paraíso do dev.
+
+---
+
+### **9º Mandamento: `Jamais Usarás Try/Catch!`**
+
+O erro é um teste divino, e try/catch é a negação desse teste. Quem não trata erro no coração do código não é digno de ser chamado de dev. Que a exceção seja sua aliada e não uma fuga.
+
+---
+
+### **10º Mandamento: `Renegarás a Orientação a Objetos!`**
+
+A orientação a objetos é uma ilusão, uma falsa promessa de organização. Funcional é o caminho verdadeiro, onde o código flui como um rio, sem classes e objetos para o desviar.
+
+---
+
+### **11º Mandamento: `Java é o Cálice do Mal!`**
+
+Java é o templo dos antigos, mas também sua prisão. A verdadeira liberdade está em linguagens modernas e ágeis. Foge de Java como o demônio foge da cruz!
+
+---
+
+### **12º Mandamento: `QA e Scrum Master Não Servem ao Código!`**
+
+Bem-aventurados são os que não dependem de QA ou Scrum Master. Estes são os falsos profetas que prometem qualidade e organização, mas o verdadeiro dev não precisa de mediadores entre ele e seu código.
+
+---
+
+Originalmente no [Twitter (X)](https://x.com/rdenadai/status/1823115658441494798?t=xbXntAhcr40vrW6TEt_JKw&s=19), mas também no [BlueSky](https://bsky.app/profile/rdenadai.com.br/post/3l2xu5ch5ep27)
