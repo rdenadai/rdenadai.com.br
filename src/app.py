@@ -2,8 +2,10 @@ from uuid import UUID
 
 import markdown
 from starlette.applications import Starlette
+from starlette.exceptions import HTTPException
 from starlette.middleware import Middleware
 from starlette.middleware.gzip import GZipMiddleware
+from starlette.requests import Request
 from starlette.responses import RedirectResponse
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
@@ -87,6 +89,16 @@ async def resume(request):
     )
 
 
+async def references(request):
+    references = markdown.markdown(await async_file_loader("static/pages/references/README.md"), tab_length=2)
+
+    return TEMPLATES.TemplateResponse(
+        request,
+        "pages/references.html",
+        {"references": references, "css": CSS_TABS.get("references")},
+    )
+
+
 async def ai_hype_sanity_check(request):
 
     return TEMPLATES.TemplateResponse(
@@ -128,10 +140,22 @@ routes = [
     Route("/essay/{essay}", endpoint=essay),
     Route("/profile", endpoint=profile),
     Route("/resume", endpoint=resume),
+    Route("/references", endpoint=references),
     Route("/ai-hype-sanity-check", endpoint=ai_hype_sanity_check),
     Route("/ai-hype-sanity-check/result/{profile}/{score}", endpoint=ai_hype_sanity_check_result),
     Mount("/static", StaticFiles(directory="static"), name="static"),
 ]
 
+
+async def not_found(request: Request, exc: HTTPException):
+    return TEMPLATES.TemplateResponse(request, "pages/error.html", {"css": CSS_TABS.get("essays")})
+
+
+async def server_error(request: Request, exc: HTTPException):
+    return TEMPLATES.TemplateResponse(request, "pages/error.html", {"css": CSS_TABS.get("essays")})
+
+
 middleware = [Middleware(GZipMiddleware, minimum_size=600, compresslevel=9)]
-app = Starlette(debug=False, routes=routes, middleware=middleware)
+app = Starlette(
+    debug=False, routes=routes, middleware=middleware, exception_handlers={404: not_found, 500: server_error}
+)

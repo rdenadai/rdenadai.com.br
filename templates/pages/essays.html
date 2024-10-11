@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %}
 <div>
-  <div class="bg-white md:rounded-lg shadow">
+  <div class="bg-white md:rounded-lg md:shadow">
     <a href="#">
       <figure
         class="md:rounded-t-lg"
@@ -30,7 +30,7 @@
   </div>
   <div class="mt-5">
     {% for essay in essays %}
-    <div class="bg-white md:rounded-lg shadow mt-5">
+    <div class="bg-white md:rounded-lg md:shadow mt-5">
       <div>
         <img
           class="md:rounded-t-lg max-h-96"
@@ -65,7 +65,8 @@
     </div>
     {% endfor %}
   </div>
-  <div class="mt-5 mx-auto w-fit flex">
+  <div class="block md:hidden border-t border-gray-300 my-5"></div>
+  <div class="my-5 mx-auto w-fit flex">
     {% if previous > 0 %}
     <a
       href="/essays/?page={{ previous }}"

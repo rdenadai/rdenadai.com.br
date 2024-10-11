@@ -1,5 +1,4 @@
 from enum import StrEnum
-from types import MappingProxyType
 
 
 class CSSTab(StrEnum):
@@ -7,39 +6,15 @@ class CSSTab(StrEnum):
     deactive: str = "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
 
 
-CSS_TABS = MappingProxyType(
-    {
-        "essays": {
-            "tab": {
-                "essays": CSSTab.active.value,
-                "profile": CSSTab.deactive.value,
-                "resume": CSSTab.deactive.value,
-                "ai": CSSTab.deactive.value,
-            }
-        },
-        "profile": {
-            "tab": {
-                "profile": CSSTab.active.value,
-                "essays": CSSTab.deactive.value,
-                "resume": CSSTab.deactive.value,
-                "ai": CSSTab.deactive.value,
-            }
-        },
-        "resume": {
-            "tab": {
-                "resume": CSSTab.active.value,
-                "essays": CSSTab.deactive.value,
-                "profile": CSSTab.deactive.value,
-                "ai": CSSTab.deactive.value,
-            }
-        },
-        "ai": {
-            "tab": {
-                "ai": CSSTab.active.value,
-                "essays": CSSTab.deactive.value,
-                "profile": CSSTab.deactive.value,
-                "resume": CSSTab.deactive.value,
-            }
-        },
-    }
-)
+CSS_TABS: dict[str, dict[str, dict]] = {
+    "essays": {"tab": {}},
+    "profile": {"tab": {}},
+    "resume": {"tab": {}},
+    "ai": {"tab": {}},
+    "references": {"tab": {}},
+}
+
+
+for ref in ("essays", "profile", "resume", "ai", "references"):
+    for xref in ("essays", "profile", "resume", "ai", "references"):
+        CSS_TABS[ref]["tab"][xref] = CSSTab.active.value if ref == xref else CSSTab.deactive.value

@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rdenadai.com.br</title>
     {% block header_card %}{% endblock %}
-    <link
-      rel="icon"
-      href="/static/img/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css"
@@ -36,36 +32,63 @@
     <script src="https://cdn.tailwindcss.com"></script>
     {% block header_extra %}{% endblock %}
     <style>
-      html, body, code, pre, p, h1, h2, h3, h4, h5, h6, ul, ol, li, a, hr, blockquote, table, tr, th, td{
+      html,
+      body,
+      code,
+      pre,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol,
+      li,
+      a,
+      hr,
+      blockquote,
+      table,
+      tr,
+      th,
+      td {
         font-family: "Fira Code", monospace !important;
       }
-      .regular-list ul
-      {
+      .regular-list ul {
         list-style: initial;
         margin: initial;
         padding: 0 0 0 40px;
       }
-      .regular-list ul li
-      {
+      .regular-list ul li {
         display: list-item;
       }
-      .regular-list ol
-      {
-        list-style-type:decimal;
+      .regular-list ol {
+        list-style-type: decimal;
         margin: initial;
         padding: 0 0 0 40px;
       }
-      .regular-list ol li
-      {
+      .regular-list ol li {
         display: list-item;
       }
     </style>
   </head>
   <body>
     <header class="bg-gray-800 text-white p-4">
-      <div class="container mx-auto flex justify-between items-center" style="max-width: 1024px">
-        <h1 class="text-3xl uppercase font-semibold">Rodolfo De Nadai</h1>
-        <nav aria-label="Social Media Links"></nav>
+      <div
+        class="flex flex-col md:flex-row container md:mx-auto md:justify-between md:items-center"
+        style="max-width: 1024px"
+      >
+        <div class="flex flex-row items-center">
+          <h1 class="text-3xl uppercase font-semibold">Rodolfo De Nadai</h1>
+          <button
+            id="menu-toggle"
+            class="p-2 focus:outline-none ml-auto md:hidden"
+          >
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        <nav class="flex flex-row items-center" aria-label="Social Media Links">
           <ul class="flex space-x-4">
             <li>
               <a
@@ -90,10 +113,65 @@
       </div>
     </header>
     <nav
-      class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" 
+      class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700"
       aria-label="Main Navigation"
     >
-      <ul class="container mx-auto flex flex-wrap -mb-px"  style="max-width: 1024px">
+      <div class="md:hidden">
+        <ul id="mobile-menu" class="hidden flex-col space-y-2 mt-2">
+          <li>
+            <a
+              href="/essays"
+              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.essays }}"
+            >
+              <span class="font-semibold text-xl">Essays</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/profile"
+              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.profile }}"
+            >
+              <span class="font-semibold text-xl">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/resume"
+              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.resume }}"
+            >
+              <span class="font-semibold text-xl">Resume</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/references"
+              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.references }}"
+            >
+              <span class="font-semibold text-xl">References</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/ai-hype-sanity-check"
+              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.ai }}"
+            >
+              <span class="font-semibold text-xl">AI Hype Sanity Check</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <script>
+        document
+          .getElementById("menu-toggle")
+          .addEventListener("click", function () {
+            var menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+          });
+      </script>
+      <ul
+        class="hidden md:flex flex-wrap flex-col md:flex-row container md:mx-auto -mb-px"
+        style="max-width: 1024px"
+      >
         <li class="me-2">
           <a
             href="/essays"
@@ -118,6 +196,13 @@
         </li>
         <li class="me-2">
           <a
+            href="/references"
+            class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.references }}"
+            ><span class="font-semibold text-xl">References</span></a
+          >
+        </li>
+        <li class="me-2">
+          <a
             href="/ai-hype-sanity-check"
             class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.ai }}"
             ><span class="font-semibold text-xl">AI Hype Sanity Check</span></a
@@ -126,9 +211,7 @@
       </ul>
     </nav>
     <div class="container mx-auto" style="max-width: 1024px">
-      <div class="md:my-5">
-        {% block content %}{% endblock %}
-      </div>
+      <div class="md:my-5">{% block content %}{% endblock %}</div>
     </div>
   </body>
   {% block script %}{% endblock %}
