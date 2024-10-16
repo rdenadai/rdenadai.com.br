@@ -12,6 +12,7 @@ from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
 from src.data import QUESTIONS_AI_DATA
+from src.rss import rss_endpoint
 from src.schema import CSS_TABS
 from src.utils import async_file_loader, get_posted_at, load_essays_data
 
@@ -51,9 +52,15 @@ async def essays(request):
 
 async def essay(request):
     try:
-        essay_id = int(request.path_params.get("essay", 1))
-        essay = next(essay for essay in await load_essays_data() if essay.get("id") == essay_id)
-        content = markdown.markdown(await async_file_loader(f"static/pages/essays/{essay_id}/README.md"), tab_length=2)
+        field = "alternate"
+        essay_id = request.path_params.get("essay", "")
+        if essay_id.isdigit():
+            field = "id"
+            essay_id = int(essay_id)
+        essay = next(essay for essay in await load_essays_data() if essay.get(field) == essay_id)
+        content = markdown.markdown(
+            await async_file_loader(f"static/pages/essays/{essay.get('id')}/README.md"), tab_length=2
+        )
 
         return TEMPLATES.TemplateResponse(
             request,
@@ -143,6 +150,7 @@ routes = [
     Route("/references", endpoint=references),
     Route("/ai-hype-sanity-check", endpoint=ai_hype_sanity_check),
     Route("/ai-hype-sanity-check/result/{profile}/{score}", endpoint=ai_hype_sanity_check_result),
+    Route("/rss.xml", rss_endpoint),
     Mount("/static", StaticFiles(directory="static"), name="static"),
 ]
 

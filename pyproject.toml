@@ -10,6 +10,7 @@ dependencies = [
     "orjson>=3.10.7",
     "starlette[full]>=0.38.5",
     "uvicorn[standard]>=0.30.6",
+    "xmltodict>=0.14.1",
 ]
 
 [tool.uv]

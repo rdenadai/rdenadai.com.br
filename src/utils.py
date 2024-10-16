@@ -18,7 +18,7 @@ def run_in_executor(_func: Callable) -> Callable:
 
 
 @run_in_executor
-@lru_cache(maxsize=1024)
+@lru_cache(maxsize=2048)
 def async_file_loader(file_path: str) -> str:
     with open(file_path, "r") as file:
         return file.read()
