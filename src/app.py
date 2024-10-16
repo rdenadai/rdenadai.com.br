@@ -21,6 +21,15 @@ N_PAGE = 5
 TEMPLATES = Jinja2Templates(directory="templates")
 
 
+async def load_default_route(request, html_page: str, markdown_file: str, tab: str):
+    content = markdown.markdown(await async_file_loader(markdown_file), tab_length=2)
+    return TEMPLATES.TemplateResponse(
+        request,
+        html_page,
+        {tab: content, "css": CSS_TABS.get(tab)},
+    )
+
+
 async def index(request):
     return RedirectResponse(url="/essays")
 
@@ -29,12 +38,10 @@ async def essays(request):
     page = int(request.query_params.get("page", 1))
 
     about_md = markdown.markdown(await async_file_loader("static/pages/README.md"), tab_length=2)
-
     essays = await load_essays_data()
-
-    essays_total = len(essays)
+    total_essays = len(essays)
     essays = essays[(page - 1) * N_PAGE : page * N_PAGE]
-    has_more_essays = essays_total > page * N_PAGE
+    has_more_essays = total_essays > page * N_PAGE
 
     return TEMPLATES.TemplateResponse(
         request,
@@ -57,6 +64,7 @@ async def essay(request):
         if essay_id.isdigit():
             field = "id"
             essay_id = int(essay_id)
+
         essay = next(essay for essay in await load_essays_data() if essay.get(field) == essay_id)
         content = markdown.markdown(
             await async_file_loader(f"static/pages/essays/{essay.get('id')}/README.md"), tab_length=2
@@ -77,41 +85,20 @@ async def essay(request):
 
 
 async def profile(request):
-    profile = markdown.markdown(await async_file_loader("static/pages/profile/README.md"), tab_length=2)
-
-    return TEMPLATES.TemplateResponse(
-        request,
-        "pages/profile.html",
-        {"profile": profile, "css": CSS_TABS.get("profile")},
-    )
+    return await load_default_route(request, "pages/profile.html", "static/pages/profile/README.md", "profile")
 
 
 async def resume(request):
-    resume = markdown.markdown(await async_file_loader("static/pages/resume/README.md"), tab_length=2)
-
-    return TEMPLATES.TemplateResponse(
-        request,
-        "pages/resume.html",
-        {"resume": resume, "css": CSS_TABS.get("resume")},
-    )
+    return await load_default_route(request, "pages/resume.html", "static/pages/resume/README.md", "resume")
 
 
 async def references(request):
-    references = markdown.markdown(await async_file_loader("static/pages/references/README.md"), tab_length=2)
-
-    return TEMPLATES.TemplateResponse(
-        request,
-        "pages/references.html",
-        {"references": references, "css": CSS_TABS.get("references")},
-    )
+    return await load_default_route(request, "pages/references.html", "static/pages/references/README.md", "references")
 
 
 async def ai_hype_sanity_check(request):
-
     return TEMPLATES.TemplateResponse(
-        request,
-        "pages/ai-hype-sanity-check/index.html",
-        {"data": QUESTIONS_AI_DATA, "css": CSS_TABS.get("ai")},
+        request, "pages/ai-hype-sanity-check/index.html", {"data": QUESTIONS_AI_DATA, "css": CSS_TABS.get("ai")}
     )
 
 
@@ -129,7 +116,7 @@ async def ai_hype_sanity_check_result(request):
                         lambda profile: profile.get("id") == profile_id
                         and score >= profile.get("min_score")
                         and score <= profile.get("max_score"),
-                        QUESTIONS_AI_DATA.get("profiles"),
+                        QUESTIONS_AI_DATA.get("profiles", []),
                     )
                 ),
                 "score": score,
@@ -138,6 +125,14 @@ async def ai_hype_sanity_check_result(request):
         )
     except Exception:
         return RedirectResponse(url="/ai-hype-sanity-check")
+
+
+async def not_found(request: Request, exc: HTTPException):
+    return TEMPLATES.TemplateResponse(request, "pages/error.html", {"css": CSS_TABS.get("essays")})
+
+
+async def server_error(request: Request, exc: HTTPException):
+    return TEMPLATES.TemplateResponse(request, "pages/error.html", {"css": CSS_TABS.get("essays")})
 
 
 routes = [
@@ -153,15 +148,6 @@ routes = [
     Route("/rss.xml", rss_endpoint),
     Mount("/static", StaticFiles(directory="static"), name="static"),
 ]
-
-
-async def not_found(request: Request, exc: HTTPException):
-    return TEMPLATES.TemplateResponse(request, "pages/error.html", {"css": CSS_TABS.get("essays")})
-
-
-async def server_error(request: Request, exc: HTTPException):
-    return TEMPLATES.TemplateResponse(request, "pages/error.html", {"css": CSS_TABS.get("essays")})
-
 
 middleware = [Middleware(GZipMiddleware, minimum_size=600, compresslevel=9)]
 app = Starlette(

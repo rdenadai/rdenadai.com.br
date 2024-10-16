@@ -173,14 +173,6 @@
           </li>
         </ul>
       </div>
-      <script>
-        document
-          .getElementById("menu-toggle")
-          .addEventListener("click", function () {
-            var menu = document.getElementById("mobile-menu");
-            menu.classList.toggle("hidden");
-          });
-      </script>
       <ul
         class="hidden md:flex flex-wrap flex-col md:flex-row container md:mx-auto -mb-px"
         style="max-width: 1024px"
@@ -228,4 +220,12 @@
     </div>
   </body>
   {% block script %}{% endblock %}
+  <script>
+    document
+      .getElementById("menu-toggle")
+      .addEventListener("click", function () {
+        var menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      });
+  </script>
 </html>

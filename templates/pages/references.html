@@ -2,7 +2,11 @@
 
 <div class="bg-white md:rounded-lg md:shadow">
   <a href="#">
-    <img class="md:rounded-t-lg" src="/static/img/references.png" alt="" />
+    <img
+      class="md:rounded-t-lg max-h-96"
+      src="/static/img/references.png"
+      alt=""
+    />
   </a>
   <div class="p-5">
     <article class="markdown-body text-justify regular-list px-4 py-4">
@@ -10,5 +14,16 @@
     </article>
   </div>
 </div>
-
+{% endblock %} {% block script %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
+</script>
 {% endblock %}

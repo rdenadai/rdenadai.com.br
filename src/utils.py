@@ -25,7 +25,7 @@ def async_file_loader(file_path: str) -> str:
 
 
 async def load_essays_data():
-    essays = loads(await async_file_loader("static/pages/essays.json"))
+    essays = loads(await async_file_loader("static/pages/essays.json") or "[]")
     return list(
         sorted(
             (essay for essay in essays if essay.get("published")),
