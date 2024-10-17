@@ -11,8 +11,7 @@ It is so good, that people say is a reference in how to build a api.
 
 requests was almost merged into the core python, but due to more rapidly updates the requests team decided to not merge the project to core python.
 
-<pre><code class="language-python">
-import requests
+<pre><code class="language-python">import requests
 
 r = requests.get('http://www.google.com.br')
 if r.status_code == 200:
@@ -25,8 +24,7 @@ Perhaps one of the few packages that people know that exists, but doesn't use a 
 Pillow is a fork of the good (but old) PIL (Python Image Library) library. When PIL stop receiving updates some great members of the python community decided to fork the old lib and implement from that a new one with new features.
 If you ever need to work with images... give Pillow a change, is very good at what it does.
 
-<pre><code class="language-python">
-from PIL import Image
+<pre><code class="language-python">from PIL import Image
 
 im = Image.open("lena.ppm")
 box = (100, 100, 400, 400)
@@ -47,8 +45,7 @@ A great project, with a great usage widespread....
 This one of the few libs in python that i find very special, nltk stands for _Natural Language Toolkit_. A library to make Natural Processing in python very easy.
 If you need to work with lots of texts, perhaps this library can help you.
 
-<pre><code class="language-python">
-import nltk
+<pre><code class="language-python">import nltk
 
 sentence = '''Just a simple frase to make words. Also check out the stopwords function in nltk'''
 tokens = nltk.word_tokenize(sentence)
@@ -59,8 +56,7 @@ tokens = nltk.word_tokenize(sentence)
 numpy is the most used library in python for science.
 numpy is a very stable library and one of the python success. Without numpy and scipy, i guess python for data science wouldn't happen!
 
-<pre><code class="language-python">
-import numpy as np
+<pre><code class="language-python">import numpy as np
 
 zeros_matrix = np.zeros( (3, 4) )
 </code></pre>
