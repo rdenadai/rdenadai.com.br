@@ -51,12 +51,13 @@
         />
       </div>
       <button
+        id="share-on-social-media"
         class="bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 mt-5 rounded"
       >
         Share on Social Media
       </button>
       <div
-        id="alert"
+        id="alert-box"
         class="bg-green-500 text-white p-2 rounded fixed bottom-40 left-1/2 transform -translate-x-1/2 opacity-90 px-20 hidden"
       ></div>
     </div>
@@ -64,7 +65,7 @@
 </div>
 {% endblock %} {% block script %}
 <script>
-  const alertBox = document.getElementById("alert");
+  const alertBox = document.getElementById("alert-box");
 
   function showAlert(message) {
     alertBox.innerHTML = `<span>${message}</span>`;
@@ -75,16 +76,18 @@
     }, 2000);
   }
 
-  document.querySelector("button").addEventListener("click", function () {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url).then(
-      function () {
-        showAlert("URL copied to clipboard");
-      },
-      function (err) {
-        console.error("Could not copy text: ", err);
-      }
-    );
-  });
+  document
+    .querySelector("#share-on-social-media")
+    .addEventListener("click", function () {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(
+        function () {
+          showAlert("URL copied to clipboard");
+        },
+        function (err) {
+          console.error("Could not copy text: ", err);
+        }
+      );
+    });
 </script>
 {% endblock %}
