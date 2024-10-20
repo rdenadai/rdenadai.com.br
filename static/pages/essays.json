@@ -152,5 +152,14 @@
         "published": false,
         "created_at": "2024-09-20",
         "tags": ["ai", "machine learning", "knowledge", "self-organizing map", "som", "clustering"]
+    }, {
+        "id": 18,
+        "alternate": "check-in-list-for-your-code-review",
+        "path": "static/pages/essays/18",
+        "title": "Check-in list for your Code Review",
+        "description": "Checklist of what I think is important during a code review (given you might be a reviewer or a submitter).<br />Hopefully this checklist will help you in remember some minimal requirements to check.",
+        "published": true,
+        "created_at": "2024-10-20",
+        "tags": ["code", "review", "knowledge", "checklist", "work"]
     }
 ]
