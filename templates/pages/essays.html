@@ -1,27 +1,25 @@
 {% extends "base.html" %} {% block content %}
 <div>
   <div class="bg-white md:rounded-lg md:shadow">
-    <a href="#">
-      <figure
-        class="md:rounded-t-lg"
-        style="
-          margin: 0 !important;
-          background: url(/static/img/cover.jpg) no-repeat center;
-          background-size: cover;
-          padding: 10px;
-        "
-      >
-        <p class="image" style="width: 25%; height: 25%">
-          <img
-            class="rounded-full"
-            style="padding: 8px; background-color: #fff"
-            src="/static/img/me.jpg"
-            alt="Myself using a black hat and drinking a beer"
-            loading="lazy"
-          />
-        </p>
-      </figure>
-    </a>
+    <figure
+      class="md:rounded-t-lg"
+      style="
+        margin: 0 !important;
+        background: url(/static/img/cover.jpg) no-repeat center;
+        background-size: cover;
+        padding: 10px;
+      "
+    >
+      <p class="image" style="width: 25%; height: 25%">
+        <img
+          class="rounded-full"
+          style="padding: 8px; background-color: #fff"
+          src="/static/img/me.jpg"
+          alt="Myself using a black hat and drinking a beer"
+          loading="lazy"
+        />
+      </p>
+    </figure>
     <div class="p-1">
       <article class="markdown-body text-justify regular-list px-4 py-4">
         {{ about_md|safe }}
@@ -35,14 +33,14 @@
         <img
           class="md:rounded-t-lg max-h-96"
           src="{{ essay.path }}/cover.jpg"
-          alt=""
+          alt="Essay cover, representing {{ essay.title }}"
           loading="lazy"
         />
       </div>
       <div class="p-5">
         <h2 class="font-semibold text-2xl">
           <i class="fa-solid fa-circle-check"></i>
-          <a href="/essay/{{ essay.alternate}}">{{ essay.title }}</a>
+          <a href="/essay/{{ essay.alternate}}" aria-label="{{ essay.title }}">{{ essay.title }}</a>
         </h2>
         <p class="mt-2 text-justify">{{ essay.description|safe }}</p>
         <ul class="mt-6">
@@ -58,6 +56,7 @@
         <div class="mt-6">
           <a
             href="/essay/{{ essay.alternate}}"
+            aria-label="Read publication"
             class="no-underline bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 rounded"
             ><i class="fa-solid fa-book"></i> Read publication</a
           >
@@ -71,6 +70,7 @@
     {% if previous > 0 %}
     <a
       href="/essays/?page={{ previous }}"
+      aria-label="Previous"
       class="no-underline bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 rounded"
     >
       <i class="fa-solid fa-angles-left"></i> Previous</a
@@ -84,6 +84,7 @@
     {% endif %} {% if next > 0 %}
     <a
       href="/essays/?page={{ next }}"
+      aria-label="Next"
       class="no-underline bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-8 ml-4 rounded"
     >
       Next <i class="fa-solid fa-angles-right"></i

@@ -67,7 +67,9 @@ async def essay(request):
 
         essay = next(essay for essay in await load_essays_data() if essay.get(field) == essay_id)
         content = markdown.markdown(
-            await async_file_loader(f"static/pages/essays/{essay.get('id')}/README.md"), tab_length=2
+            await async_file_loader(f"static/pages/essays/{essay.get('id')}/README.md"),
+            tab_length=2,
+            extensions=["markdown.extensions.fenced_code"],
         )
 
         return TEMPLATES.TemplateResponse(

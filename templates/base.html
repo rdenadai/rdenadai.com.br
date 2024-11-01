@@ -34,7 +34,6 @@
       referrerpolicy="no-referrer"
       defer
     />
-    <script src="https://cdn.tailwindcss.com"></script>
     {% block header_extra %}{% endblock %}
     <style>
       html,
@@ -77,6 +76,7 @@
         display: list-item;
       }
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <header class="bg-gray-800 text-white p-4">
@@ -88,6 +88,7 @@
           <h1 class="text-3xl uppercase font-semibold">Rodolfo De Nadai</h1>
           <button
             id="menu-toggle"
+            aria-label="Toggle Menu"
             class="p-2 focus:outline-none ml-auto md:hidden"
           >
             <i class="fas fa-bars text-2xl"></i>
@@ -99,6 +100,7 @@
               <a
                 href="https://github.com/rdenadai"
                 target="_blank"
+                aria-label="GitHub"
                 class="text-white text-2xl hover:text-gray-400"
               >
                 <i class="fab fa-github"></i>
@@ -108,6 +110,7 @@
               <a
                 href="http://br.linkedin.com/in/rdenadai"
                 target="_blank"
+                aria-label="LinkedIn"
                 class="text-white text-2xl hover:text-gray-400"
               >
                 <i class="fab fa-linkedin"></i>
@@ -117,6 +120,7 @@
               <a
                 href="/rss.xml"
                 target="_blank"
+                aria-label="RSS Feed"
                 class="text-white text-2xl hover:text-gray-400"
               >
                 <i class="fa fa-rss"></i>
@@ -127,7 +131,7 @@
       </div>
     </header>
     <nav
-      class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700"
+      class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-500 dark:border-gray-700"
       aria-label="Main Navigation"
     >
       <div class="md:hidden">
@@ -135,6 +139,7 @@
           <li>
             <a
               href="/essays"
+              aria-label="Essays"
               class="block p-4 border-b-2 rounded-t-lg {{ css.tab.essays }}"
             >
               <span class="font-semibold text-xl">Essays</span>
@@ -143,6 +148,7 @@
           <li>
             <a
               href="/profile"
+              aria-label="Profile"
               class="block p-4 border-b-2 rounded-t-lg {{ css.tab.profile }}"
             >
               <span class="font-semibold text-xl">Profile</span>
@@ -151,6 +157,7 @@
           <li>
             <a
               href="/resume"
+              aria-label="Resume"
               class="block p-4 border-b-2 rounded-t-lg {{ css.tab.resume }}"
             >
               <span class="font-semibold text-xl">Resume</span>
@@ -159,6 +166,7 @@
           <li>
             <a
               href="/references"
+              aria-label="References"
               class="block p-4 border-b-2 rounded-t-lg {{ css.tab.references }}"
             >
               <span class="font-semibold text-xl">References</span>
@@ -167,6 +175,7 @@
           <li>
             <a
               href="/ai-hype-sanity-check"
+              aria-label="AI Hype Sanity Check"
               class="block p-4 border-b-2 rounded-t-lg {{ css.tab.ai }}"
             >
               <span class="font-semibold text-xl">AI Hype Sanity Check</span>
@@ -222,11 +231,13 @@
   </body>
   {% block script %}{% endblock %}
   <script>
-    document
-      .getElementById("menu-toggle")
-      .addEventListener("click", function () {
-        var menu = document.getElementById("mobile-menu");
-        menu.classList.toggle("hidden");
-      });
+    (function () {
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+    })();
   </script>
 </html>

@@ -23,9 +23,9 @@
 {% endblock %} {% block header_extra %}
 <link
   rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-light.min.css"
 />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
 {% endblock %} {% block script %}
 <script>
   hljs.highlightAll();
@@ -36,7 +36,7 @@
     <img
       class="md:rounded-t-lg max-h-96"
       src="../{{ essay.path }}/cover.jpg"
-      alt=""
+      alt="Essay cover, representing {{ essay.title }}"
     />
   </div>
   <div class="p-5">
@@ -65,6 +65,7 @@
     <div class="mt-6">
       <a
         href="/essays/"
+        aria-label="Back to Essays"
         class="no-underline bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 rounded"
         ><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a
       >

@@ -25,9 +25,9 @@ If you known Neural Networks and their process, in a way some of the steps are t
 
 #### **Code Example**
 
-<pre><code class="language-python">
+```python
 
-</code></pre>
+```
 
 [My SOM Implementation][2]
 

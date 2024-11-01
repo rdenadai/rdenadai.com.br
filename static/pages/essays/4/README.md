@@ -25,7 +25,7 @@ Notice that the first 4 letters of both words are **DESC**! "Description" is muc
 
 Here’s my implementation:
 
-<pre><code class="language-python">
+```python
 from unicodedata import normalize
 from collections import defaultdict
 import logging
@@ -177,7 +177,7 @@ if __name__ == '__main__':
     # Generate a json file with all terms and words!
     with open('palavras.json', 'wb') as js:
         js.write(json.dumps(final_dic))
-</code></pre>
+```
 
 In the code above im not doing the complex part mentioned above, im just returning the 4 first letters of a word and done, new term created.
 In next weeks i'll improve the script above making it more like a class base or ready to use app on heroku.
