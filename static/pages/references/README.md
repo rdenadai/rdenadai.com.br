@@ -63,6 +63,9 @@ Here you might find papers, blogs, books, articles, etc. that I've read and / or
 - [The Rust Programming Language](https://doc.rust-lang.org/book/)
 - [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
 - [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/)
+- [The Cargo Book](https://doc.rust-lang.org/cargo/index.html)
+- [Rust Atomics and Locks](https://marabos.nl/atomics/foreword.html)
+- [The Rustonomicon](https://doc.rust-lang.org/nomicon/)
 - [Welcome to Comprehensive Rust](https://google.github.io/comprehensive-rust/index.html)
 - [Rust Language Cheat Sheet](https://cheats.rs/)
 
