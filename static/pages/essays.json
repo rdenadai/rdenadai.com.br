@@ -161,5 +161,14 @@
         "published": true,
         "created_at": "2024-10-20",
         "tags": ["code", "review", "knowledge", "checklist", "work"]
+    }, {
+        "id": 19,
+        "alternate": "check-in-list-for-your-code-review",
+        "path": "static/pages/essays/19",
+        "title": "Exploring Fuzzy Matching!",
+        "description": "In this post, I'll explore a little bit what Fuzzy Search is, some differences between Fuzzy Search and Regular Search, present some algorithms and libraries that can be used to implement it.",
+        "published": true,
+        "created_at": "2024-11-03",
+        "tags": ["code", "search", "knowledge", "fuzzy search", "fuzzy matching"]
     }
 ]
