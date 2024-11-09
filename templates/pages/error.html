@@ -1,20 +1,26 @@
 {% extends "base.html" %} {% block content %}
-<div class="bg-white md:rounded-lg md:shadow">
-  <img class="md:rounded-t-lg" src="/static/img/error.jpg" alt="A tranquil, vibrant scene of a secluded Japanese garden with a waterfall flowing into a calm pond. Lush trees with bright green and yellow foliage surround the area, casting soft shadows over the water. Traditional Japanese stone lanterns and small pagodas line the pond's edge, adding to the peaceful ambiance. The scene captures a sense of serenity and natural beauty, with sunlight filtering through the trees, illuminating patches of the pond and creating a harmonious balance between light and shade." />
+<div class="md:rounded-lg md:shadow md:dark:shadow-gray-500">
+  <img
+    class="md:rounded-t-lg"
+    src="/static/img/error.jpg"
+    alt="A tranquil, vibrant scene of a secluded Japanese garden with a waterfall flowing into a calm pond. Lush trees with bright green and yellow foliage surround the area, casting soft shadows over the water. Traditional Japanese stone lanterns and small pagodas line the pond's edge, adding to the peaceful ambiance. The scene captures a sense of serenity and natural beauty, with sunlight filtering through the trees, illuminating patches of the pond and creating a harmonious balance between light and shade."
+  />
   <div class="text-center p-6">
     <div>
-      <h1 class="text-6xl font-extrabold text-red-600">Oops!</h1>
-      <p class="mt-4 text-xl text-gray-700">
+      <h1 class="text-6xl font-extrabold text-red-600 dark:text-red-400">
+        Oops!
+      </h1>
+      <p class="mt-4 text-xl text-gray-700 dark:text-white">
         It looks like you've stumbled upon an error page. But since you're here,
         why not enjoy a little story?
       </p>
     </div>
     <div class="mt-5">
       <hr class="my-6 border-gray-300 w-full" />
-      <h3 class="text-4xl font-bold text-gray-600">
+      <h3 class="text-4xl font-bold text-gray-600 dark:text-white">
         Tama, The Guardian of the Mountain Village
       </h3>
-      <div class="mt-4 text-lg text-gray-700 text-justify">
+      <div class="mt-4 text-lg text-gray-700 dark:text-gray-100 text-justify">
         <p class="mt-4">
           In a small village at the base of a mountain in feudal Japan lived a
           golden-furred cat named Tama. Her round, green eyes gleamed like jade,

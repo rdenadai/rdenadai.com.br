@@ -2,6 +2,8 @@
 
 ---
 
+**INTJ-T, 🐍, 🦀, 🐫, 🤖**
+
 I'm a middle-aged software developer from Brazil, eager to learn more about the world and better understand people's strange and sometimes bizarre views.
 
 As a software developer, I enjoy building programs to help others. The thing that really drives me is the pursuit of knowledge.
@@ -11,12 +13,6 @@ As a software developer, I enjoy building programs to help others. The thing tha
 - ⚡ Fun fact
   - Computer geek
   - **Star Wars** Fan!
-
-<div align="left">
-  <br />
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=rdenadai&show_icons=true&theme=vue&include_all_commits=true&count_private=true" /><br />
-  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rdenadai&layout=compact&theme=vue&langs_count=8&hide=jupyter%20notebook,html" />
-</div>
 
 ### 🧐 My values
 

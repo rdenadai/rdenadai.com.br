@@ -1,22 +1,23 @@
-### <i class="fa-regular fa-circle-dot"></i> **Keirsey Temperament Sorter - II (Personality Instrument)**
+### <div class="bg-gray-100 dark:bg-gray-800 p-3 font-semibold"><i class="fa-regular fa-circle-dot"></i> **Keirsey Temperament Sorter - II (Personality Instrument)**</div>
 
-<a href="/static/pdf/Temperament.pdf" class="!no-underline !bg-gray-100 hover:!bg-gray-200 !text-gray-500 !font-semibold !py-3 !px-6 !rounded">
-More</a>
+<a href="/static/pdf/Temperament.pdf">see more</a>
 
 **Rationals (NT)**: are the problem solving temperament, particularly if the problem has to do with the many complex systems that make up the world around us. Rationals might tackle problems in organic systems such as plants and animals, or in mechanical systems such as railroads and computers, or in social systems such as families and companies and governments. But whatever systems fire their curiosity, Rationals will analyze them to understand how they work, so they can figure out how to make them work better.
+
 In working with problems, Rationals try to find solutions that have application in the real world, but they are even more interested in the abstract concepts involved, the fundamental principles or natural laws that underlie the particular case. And they are completely pragmatic about their ways and means of achieving their ends. Rationals don't care about being politically correct. They are interested in the most efficient solutions possible, and will listen to anyone who has something useful to teach them, while disregarding any authority or customary procedure that wastes time and resources.
+
 Rationals have an insatiable hunger to accomplish their goals and will work tirelessly on any project they have set their mind to. They are rigorously logical and fiercely independent in their thinking ­­ are indeed skeptical of all ideas, even their own ­­ and they believe they can overcome any obstacle with their will power. Often they are seen as cold and distant, but this is really the absorbed concentration they give to whatever problem they're working on.
 Whether designing a skyscraper or an experiment, developing a theory or a prototype technology, building an aircraft, a corporation, or a strategic alliance, Rationals value intelligence, in themselves and others, and they pride themselves on the ingenuity they bring to their problem solving.
+
 Rationals are very scarce, comprising as little as 7 to 10 percent of the population. But because of their drive to unlock the secrets of nature, and to develop new technologies, they have done much to shape our world.
 
 **Masterminds (INTJ)**: are head and shoulders above the rest when it comes to complex operations planning. As a Mastermind, you seem to have an innate ability to grasp a project's necessary progression and understand how each step leads to the next. You can also be first­ rate when it comes to anticipating potential difficulties and preparing alternatives. By trying to imagine every contingency, you'll almost never set off on a project without more than one plan in mind. If Plan A fails, you'll move directly along to Plan B.
 
 ---
 
-### <i class="fa-regular fa-circle-dot"></i> **16 Personalities Test**
+### <div class="bg-gray-100 dark:bg-gray-800 p-3 font-semibold"><i class="fa-regular fa-circle-dot"></i> **16 Personalities Test**</div>
 
-<a href="https://www.16personalities.com/profiles/fafdc4b28f928" class="!no-underline !bg-gray-100 hover:!bg-gray-200 !text-gray-500 !font-semibold !py-3 !px-6 !rounded">
-More</a>
+<a href="https://www.16personalities.com/profiles/fafdc4b28f928">see more</a>
 
 ### **Strengths**:
 
@@ -46,12 +47,12 @@ More</a>
 
 ---
 
-### <i class="fa-regular fa-circle-dot"></i> **StrengthsFinder 2.0 Report**
+### <div class="bg-gray-100 dark:bg-gray-800 p-3 font-semibold"><i class="fa-regular fa-circle-dot"></i> **StrengthsFinder 2.0 Report**</div>
 
-<a href="/static/pdf/StrengthFinder.pdf" class="!no-underline !bg-gray-100 hover:!bg-gray-200 !text-gray-500 !font-semibold !py-3 !px-6 !rounded">
-More</a>
+<a href="/static/pdf/StrengthFinder.pdf">see more</a>
 
 **Input**: Instinctively, you are willing to spend time sharing your ideas with intelligent individuals. Of course, you want them to tell you their latest thinking. Conversations that involve a lot of questions and answers stimulate your mind. You know you have spent your time wisely when you have a number of new ideas, theories, or concepts to somehow file away or remember for future use. By nature, you can finagle — that is, obtain by indirect or involved means — time with people who think about the coming years and decades. Routinely, you read their writings or listen to their conversations. You probably ask them questions and consider their responses. You file away lots of ideas and facts, sensing that one day this information will prove to be useful. Whether it ever actually does become useful makes no difference to you. Collecting the predictions of forward-looking thinkers is apt to be rewarding in and of itself. Driven by your talents, you can feel constrained — that is, limited — by rigid and strict due dates.
+
 Why? You require sufficient time to gather all the facts, data, or information needed. While others celebrate finishing something on schedule, you are apt to question whether the discussion of important ideas, theories, or concepts was too rushed. Chances are good that you are comfortable saying, “I am a fine educator.” You probably converse with others in your field about ideas, theories, or concepts to gather the latest thinking. Using these insights, you are apt to draw your students into discussions that entice them to explore topics. You want them to really understand the subject rather than memorize a few facts just to pass a test. It’s very likely that you may gain the advantage by using difficult-to-understand words in your speech or writing. To some extent, this forces certain people to ask questions. When they must depend on you for answers, perhaps you become an authority figure. Possibly much preparation goes into your examination of the subject prior to these interactions. Because you realize knowledge is power, you might be inclined to delve into specific topics for the sole purpose of making discoveries or acquiring new information.
 
 **Intellection**: Because of your strengths, you derive much pleasure from pondering things deeply. After much forethought, you customarily reach conclusions, offer new ideas, suggest different ways of looking at situations, or ask probing questions. It’s very likely that you are determined to push for changes that will benefit humankind or Earth itself. Your desire to have an impact motivates you to enter into conversations with intelligent people. Drawing on their wealth of knowledge and ideas as well as sharing your treasure trove of wisdom is exciting. These discussions frequently cause you to think in new ways and to reexamine your purpose in life. Driven by your talents, you tend to express your doubts about various ideas, theories, or concepts. Using your brainpower, you put aside your emotions while calmly absorbing as much information as you can. Even though you may have never experienced a particular situation, event, opportunity, or dilemma, you exhibit the mental capacity to project yourself into it. Lively conversations with intelligent individuals stimulate your thinking about abstract or complex topics. Chances are good that you may feel better about yourself and life in general when you have time to carefully examine ideas, scrutinize documents, or inspect numerical data. Perhaps certain people describe you as studious or scholarly. By nature, you might delve into subject matter that intrigues you. Perhaps you read, write, listen to lectures, experiment, or research selected topics to broaden your understanding of them. Sometimes you think of questions no one else has ever asked. Sometimes you find your own answers.

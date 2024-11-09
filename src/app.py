@@ -31,13 +31,12 @@ async def load_default_route(request, html_page: str, markdown_file: str, tab: s
 
 
 async def index(request):
-    return RedirectResponse(url="/essays")
+    return await load_default_route(request, "pages/index.html", "static/pages/README.md", "index")
 
 
 async def essays(request):
     page = int(request.query_params.get("page", 1))
 
-    about_md = markdown.markdown(await async_file_loader("static/pages/README.md"), tab_length=2)
     essays = await load_essays_data()
     total_essays = len(essays)
     essays = essays[(page - 1) * N_PAGE : page * N_PAGE]
@@ -47,7 +46,6 @@ async def essays(request):
         request,
         "pages/essays.html",
         {
-            "about_md": about_md,
             "essays": essays,
             "page": page,
             "previous": page - 1 if page - 1 > 0 else 0,

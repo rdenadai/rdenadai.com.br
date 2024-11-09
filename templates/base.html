@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css"
-      integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       defer
@@ -21,15 +20,14 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       defer
     />
     <link
+      id="github-markdown-css-theme"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.6.1/github-markdown-light.min.css"
-      integrity="sha512-SLv8CNVAxhcbDQfwc9dS5OuZAAYqdTGJTBSUtKNQbCUO2gMno4Fp2Vn8Xsvj993RcofNfj2d5JA0jYBve4SEXA=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.7.0/github-markdown-dark.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       defer
@@ -58,6 +56,7 @@
       th,
       td {
         font-family: "Fira Code", monospace !important;
+        text-decoration: none !important;
       }
       .regular-list ul {
         list-style: initial;
@@ -77,8 +76,9 @@
       }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/index.js"></script>
   </head>
-  <body>
+  <body class="bg-white dark:bg-gray-900 text-black dark:text-white">
     <header class="bg-gray-800 text-white p-4">
       <div
         class="flex flex-col md:flex-row container md:mx-auto md:justify-between md:items-center"
@@ -96,6 +96,15 @@
         </div>
         <nav class="flex flex-row items-center" aria-label="Social Media Links">
           <ul class="flex space-x-4">
+            <li>
+              <button
+                id="theme-toggle"
+                aria-label="Toggle Light/Dark Mode"
+                class="text-white text-2xl hover:text-gray-400 focus:outline-none"
+              >
+                <i class="fas fa-moon"></i>
+              </button>
+            </li>
             <li>
               <a
                 href="https://github.com/rdenadai"
@@ -136,6 +145,15 @@
     >
       <div class="md:hidden">
         <ul id="mobile-menu" class="hidden flex-col space-y-2 mt-2">
+          <li>
+            <a
+              href="/"
+              aria-label="Home"
+              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.index }}"
+            >
+              <span class="font-semibold text-xl">Home</span>
+            </a>
+          </li>
           <li>
             <a
               href="/essays"
@@ -189,8 +207,16 @@
       >
         <li class="me-2">
           <a
+            href="/"
+            aria-label="Home"
+            class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.index }}"
+            ><span class="font-semibold text-xl">Home</span></a
+          >
+        </li>
+        <li class="me-2">
+          <a
             href="/essays"
-            aria-current="page"
+            aria-label="Essays"
             class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.essays }}"
             ><span class="font-semibold text-xl">Essays</span></a
           >
@@ -198,6 +224,7 @@
         <li class="me-2">
           <a
             href="/profile"
+            aria-label="Profile"
             class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.profile }}"
             ><span class="font-semibold text-xl">Profile</span></a
           >
@@ -205,6 +232,7 @@
         <li class="me-2">
           <a
             href="/resume"
+            aria-label="Resume"
             class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.resume }}"
             ><span class="font-semibold text-xl">Resume</span></a
           >
@@ -212,6 +240,7 @@
         <li class="me-2">
           <a
             href="/references"
+            aria-label="References"
             class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.references }}"
             ><span class="font-semibold text-xl">References</span></a
           >
@@ -219,6 +248,7 @@
         <li class="me-2">
           <a
             href="/ai-hype-sanity-check"
+            aria-label="AI Hype Sanity Check"
             class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.ai }}"
             ><span class="font-semibold text-xl">AI Hype Sanity Check</span></a
           >
@@ -230,14 +260,4 @@
     </div>
   </body>
   {% block script %}{% endblock %}
-  <script>
-    (function () {
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          var menu = document.getElementById("mobile-menu");
-          menu.classList.toggle("hidden");
-        });
-    })();
-  </script>
 </html>

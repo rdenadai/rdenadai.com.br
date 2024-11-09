@@ -1,13 +1,15 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="bg-white md:rounded-lg md:shadow">
+<div class="md:rounded-lg md:shadow md:dark:shadow-gray-500">
   <img
     class="md:rounded-t-lg max-h-96"
     src="/static/img/profile.jpg"
     alt="A serene scene in a sunlit meadow, where a lone person stands surrounded by tall grass and wild plants. The early morning or late afternoon sunlight streams through the trees, casting warm, golden rays and long shadows that create a peaceful and contemplative atmosphere. The person, silhouetted against the light, appears thoughtful, blending into the tranquil, natural surroundings as they stand in solitude amidst the gentle glow of the sun filtering through the trees. Captures a moment of quiet reflection in nature."
   />
   <div class="p-5">
-    <article class="markdown-body text-justify regular-list px-4 py-4">
+    <article
+      class="markdown-body dark:bg-gray-900 text-justify regular-list px-4 py-4"
+    >
       {{ profile|safe }}
     </article>
   </div>

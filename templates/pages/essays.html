@@ -1,34 +1,8 @@
 {% extends "base.html" %} {% block content %}
 <div>
-  <div class="bg-white md:rounded-lg md:shadow">
-    <figure
-      class="md:rounded-t-lg"
-      style="
-        margin: 0 !important;
-        background: url(/static/img/cover.jpg) no-repeat center;
-        background-size: cover;
-        padding: 10px;
-      "
-    >
-      <p class="image" style="width: 25%; height: 25%">
-        <img
-          class="rounded-full"
-          style="padding: 8px; background-color: #fff"
-          src="/static/img/me.jpg"
-          alt="Myself using a black hat and drinking a beer"
-          loading="lazy"
-        />
-      </p>
-    </figure>
-    <div class="p-1">
-      <article class="markdown-body text-justify regular-list px-4 py-4">
-        {{ about_md|safe }}
-      </article>
-    </div>
-  </div>
   <div class="mt-5">
     {% for essay in essays %}
-    <div class="bg-white md:rounded-lg md:shadow mt-5">
+    <div class="md:rounded-lg md:shadow md:dark:shadow-gray-500 mt-5">
       <div>
         <img
           class="md:rounded-t-lg max-h-96"
@@ -40,14 +14,16 @@
       <div class="p-5">
         <h2 class="font-semibold text-2xl">
           <i class="fa-solid fa-circle-check"></i>
-          <a href="/essay/{{ essay.alternate}}" aria-label="{{ essay.title }}">{{ essay.title }}</a>
+          <a href="/essay/{{ essay.alternate}}" aria-label="{{ essay.title }}"
+            >{{ essay.title }}</a
+          >
         </h2>
         <p class="mt-2 text-justify">{{ essay.description|safe }}</p>
         <ul class="mt-6">
           {% for tag in essay.tags %}
           <li style="display: inline-block !important" class="my-4">
             <span
-              class="no-underline bg-gray-100 hover:bg-gray-200 text-gray-500 text-sm py-2 px-2 rounded"
+              class="no-underline bg-gray-100 hover:bg-gray-200 dark:bg-gray-500 hover:dark:bg-gray-700 text-gray-500 dark:text-black text-sm py-2 px-2 rounded"
               >{{ tag }}</span
             >
           </li>
@@ -71,13 +47,13 @@
     <a
       href="/essays/?page={{ previous }}"
       aria-label="Previous"
-      class="no-underline bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 rounded"
+      class="no-underline bg-gray-700 hover:bg-gray-800 text-white text-xl py-2 px-4 rounded"
     >
       <i class="fa-solid fa-angles-left"></i> Previous</a
     >
     {% else %}
     <div
-      class="bg-gray-100 hover:bg-gray-200 text-gray-500 text-xl py-2 px-4 rounded"
+      class="bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 text-gray-500 text-xl py-2 px-4 rounded"
     >
       <i class="fa-solid fa-angles-left"></i> Previous
     </div>
@@ -85,13 +61,13 @@
     <a
       href="/essays/?page={{ next }}"
       aria-label="Next"
-      class="no-underline bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-8 ml-4 rounded"
+      class="no-underline bg-gray-700 hover:bg-gray-800 text-white text-xl py-2 px-8 ml-4 rounded"
     >
       Next <i class="fa-solid fa-angles-right"></i
     ></a>
     {% else %}
     <div
-      class="bg-gray-100 hover:bg-gray-200 text-gray-500 text-xl py-2 px-4 ml-4 rounded"
+      class="bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 text-gray-500 text-xl py-2 px-4 rounded"
     >
       Next <i class="fa-solid fa-angles-right"></i>
     </div>

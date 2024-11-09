@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+<div>
+  <div class="md:rounded-lg md:shadow md:dark:shadow-gray-500">
+    <figure
+      class="md:rounded-t-lg"
+      style="
+        margin: 0 !important;
+        background: url(/static/img/cover.jpg) no-repeat center;
+        background-size: cover;
+        padding: 10px;
+      "
+    >
+      <p class="image" style="width: 25%; height: 25%">
+        <img
+          class="rounded-full"
+          style="padding: 8px; background-color: #fff"
+          src="/static/img/me.jpg"
+          alt="Myself using a black hat and drinking a beer"
+          loading="lazy"
+        />
+      </p>
+    </figure>
+    <div class="p-1">
+      <article
+        class="markdown-body dark:bg-gray-900 text-justify regular-list px-4 py-4"
+      >
+        {{ index|safe }}
+      </article>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -22,8 +22,9 @@
 />
 {% endblock %} {% block header_extra %}
 <link
+  id="highlightjs-theme"
   rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-light.min.css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css"
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
 {% endblock %} {% block script %}
@@ -31,7 +32,7 @@
   hljs.highlightAll();
 </script>
 {% endblock %} {% block content %}
-<div class="bg-white md:rounded-lg md:shadow">
+<div class="md:rounded-lg md:shadow md:dark:shadow-gray-500">
   <div>
     <img
       class="md:rounded-t-lg max-h-96"
@@ -52,13 +53,15 @@
       {% for tag in essay.tags %}
       <li style="display: inline-block !important" class="my-4">
         <span
-          class="no-underline bg-gray-100 hover:bg-gray-200 text-gray-500 text-sm py-2 px-2 rounded"
+          class="no-underline bg-gray-100 hover:bg-gray-200 dark:bg-gray-500 hover:dark:bg-gray-700 text-gray-500 dark:text-black text-sm py-2 px-2 rounded"
           >{{ tag }}</span
         >
       </li>
       {% endfor %}
     </ul>
-    <article class="markdown-body text-justify regular-list mt-5">
+    <article
+      class="markdown-body dark:bg-gray-900 text-justify regular-list mt-5"
+    >
       {{ content|safe }}
     </article>
     <hr class="my-2" />
