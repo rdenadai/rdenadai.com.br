@@ -1,174 +1,302 @@
 [
-    {
-        "id": 1,
-        "alternate": "continuous-learning",
-        "path": "static/pages/essays/1",
-        "title": "Continuous Learning",
-        "description": "So, are you one of those people who doesn’t like to study? Hate diving into books? Learning is a fundamental part of our lives. In this post, I’m discussing a few things you should know about learning...",
-        "published": true,
-        "created_at": "2016-01-22",
-        "tags": ["life", "work", "learning", "study", "books", "knowledge", "motivation"]
-    }, {
-        "id": 2,
-        "alternate": "syndrome-of-rush",
-        "path": "static/pages/essays/2",
-        "title": "Syndrome of Rush",
-        "description": "SThis is a brief insight about the rush and how we waste time trying to achieve more in less time. <br />Is this truly an essential quality in our society?",
-        "published": true,
-        "created_at": "2016-01-23",
-        "tags": ["life", "work", "knowledge", "motivation"]
-    }, {
-        "id": 3,
-        "alternate": "future-expectations-about-the-world",
-        "path": "static/pages/essays/3",
-        "title": "Future Expectations about the World",
-        "description": "This is a small thought about future of our world in terms of ourselves.",
-        "published": true,
-        "created_at": "2016-03-16",
-        "tags": ["life", "work", "knowledge", "science", "technology"]
-    }, {
-        "id": 4,
-        "alternate": "create-a-glossary-of-terms",
-        "path": "static/pages/essays/4",
-        "title": "Create a glossary of Terms",
-        "description": "In this post, i'll talk about a way to create a glossary of terms using python and nltk. Keep in mind that since im from Brazil, im building a glossary in portuguese, but the means to build one could be used to build a glossary in any other language.",
-        "published": true,
-        "created_at": "2016-04-08",
-        "tags": ["python", "nltk", "glossary", "terms", "knowledge", "code", "data"]
-    }, {
-        "id": 5,
-        "alternate": "10-python-packages-you-cant-live-without",
-        "path": "static/pages/essays/5",
-        "title": "10 python packages you cant live without",
-        "description": "As a Python developer, you should at least know that these libraries exist. If you’re already using them, thumbs up to you!",
-        "published": true,
-        "created_at": "2016-05-05",
-        "tags": ["python", "packages", "knowledge", "code"]
-    }, {
-        "id": 6,
-        "alternate": "review-human-compatible-by-stuart-russell",
-        "path": "static/pages/essays/6",
-        "title": "Review : Human Compatible by Stuart Russell",
-        "description": "Review of the new book written by one of the most well known personalities in the AI field.",
-        "published": true,
-        "created_at": "2020-02-09",
-        "tags": ["ai", "machine learning", "deep learning", "cognition", "books", "knowledge", "review"]
-    }, {
-        "id": 7,
-        "alternate": "review-guide-for-thinking-humans-by-melanie-mitchell",
-        "path": "static/pages/essays/7",
-        "title": "Review : A.I. a Guide for Thinking Humans by Melanie Mitchell",
-        "description": "Review of the new book written by Melanie Mitchell, prof. of computer science at Portland State University and also received her PhD from Douglas Hofstadter the famous author of the book Gödel, Escher, Bach: An Eternal Golden Braid.",
-        "published": true,
-        "created_at": "2020-02-21",
-        "tags": ["ai", "machine learning", "deep learning", "cognition", "books", "knowledge", "review"]
-    }, {
-        "id": 8,
-        "alternate": "review-protein-structure-prediction",
-        "path": "static/pages/essays/8",
-        "title": "Review: Protein Structure Prediction",
-        "description": "Protein Structure Prediction is another biggest challenge that mankind is looking to solve. If solved or at least partially solved it could revolutionize medicine and drug industry.",
-        "published": true,
-        "created_at": "2020-07-17",
-        "tags": ["ai", "machine learning", "deep learning", "biology", "medicine", "knowledge", "review"]
-    }, {
-        "id": 9,
-        "alternate": "path-to-become-a-aws-certified-cloud-practitioner",
-        "path": "static/pages/essays/9",
-        "title": "Path to become a AWS Certified Cloud Practitioner",
-        "description": "Some cool resources to prepare for AWS Basic Certification.",
-        "published": true,
-        "created_at": "2022-02-06",
-        "tags": ["aws", "cloud", "certification", "knowledge"]
-    }, {
-        "id": 10,
-        "alternate": "chatgpt-can-ai-become-a-storyteller",
-        "path": "static/pages/essays/10",
-        "title": "ChatGPT: Can AI become a storyteller?",
-        "description": "ChatGPT is the new kid on the block ... But, would ChatGPT be able to became a storyteller?",
-        "published": true,
-        "created_at": "2022-12-20",
-        "tags": ["ai", "machine learning", "deep learning", "nlp", "knowledge", "review", "storytelling"]
-    }, {
-        "id": 11,
-        "alternate": "chatgpt-midjourney-creating-a-story",
-        "path": "static/pages/essays/11",
-        "title": "ChatGPT + MidJourney: Creating a story",
-        "description": "This is a follow up post about ChatGPT, but this time, instead of generating the images of our characters using DALL-E I went on Midjourney v4 for that. <br />It's amazing!",
-        "published": true,
-        "created_at": "2023-01-17",
-        "tags": ["ai", "machine learning", "deep learning", "nlp", "knowledge", "review", "storytelling", "chatgpt", "midjourney"]
-    }, {
-        "id": 12,
-        "alternate": "generative-ai-and-the-near-future-humanity",
-        "path": "static/pages/essays/12",
-        "title": "Generative AI and the Near Future Humanity",
-        "description": "This year is coming to an end (2023 if you're reading this in the future), and ahead lots of questions raised this year about generative AI will resonate over the tech industry.",
-        "published": true,
-        "created_at": "2023-12-31",
-        "tags": ["ai", "machine learning", "deep learning", "nlp", "cognition", "knowledge", "chatgpt", "midjourney"]
-    }, {
-        "id": 13,
-        "alternate": "harnessing-decision-trees-for-efficient-learning",
-        "path": "static/pages/essays/13",
-        "title": "Harnessing Decision Trees for Efficient Learning",
-        "description": "This is a follow up post about ChatGPT, but this time, instead of generating the images of our characters using DALL-E I went on Midjourney v4 for that. <br />It's amazing!",
-        "published": true,
-        "created_at": "2024-03-10",
-        "tags": ["ai", "machine learning", "motivation", "knowledge", "decision trees"]
-    }, {
-        "id": 14,
-        "alternate": "does-ai-generate-art",
-        "path": "static/pages/essays/14",
-        "title": "Does AI generate art?",
-        "description": "Much has been discussed about AI and art. But, can AI really generate art?",
-        "published": true,
-        "created_at": "2024-09-20",
-        "tags": ["ai", "machine learning", "knowledge", "human creativity", "art"]
-    }, {
-        "id": 15,
-        "alternate": "python-expert-path",
-        "path": "static/pages/essays/15",
-        "title": "Python Expert Path",
-        "description": "A simple, but hopefully useful guide to become a Python expert.",
-        "published": true,
-        "created_at": "2024-09-24",
-        "tags": ["python", "learning", "study", "books", "knowledge", "motivation"]
-    }, {
-        "id": 16,
-        "alternate": "os-12-mandamentos-da-sagrada-bolhadev",
-        "path": "static/pages/essays/16",
-        "title": "Os 12 Mandamentos da Sagrada #bolhaDev",
-        "description": "Eis aqui os 12 mandamentos da sagrada #bolhaDev. Ao longo dos anos muito foi sendo discutido, principalmente, no Twitter o que era bom ou ruim dentro da bolha de desenvolvimento.<br /> Esse é apenas um apanhado de 12 principais pontos que sempre foram colocados como pau de conversa e discórdia.",
-        "published": true,
-        "created_at": "2024-09-25",
-        "tags": ["life", "work", "fun", "bolhaDev"]
-    }, {
-        "id": 17,
-        "alternate": "self-organizing-map",
-        "path": "static/pages/essays/17",
-        "title": "Self-Organizing Map (Kohonen Map)",
-        "description": "An unsupervised machine learning algorithm based on the premise that neurons closer to the data in a high-dimensional space can be represented as a 2D mapping surface.",
-        "published": false,
-        "created_at": "2024-09-20",
-        "tags": ["ai", "machine learning", "knowledge", "self-organizing map", "som", "clustering"]
-    }, {
-        "id": 18,
-        "alternate": "check-in-list-for-your-code-review",
-        "path": "static/pages/essays/18",
-        "title": "Check-in list for your Code Review",
-        "description": "Checklist of what I think is important during a code review (given you might be a reviewer or a submitter).<br />Hopefully this checklist will help you in remember some minimal requirements to check.",
-        "published": true,
-        "created_at": "2024-10-20",
-        "tags": ["code", "review", "knowledge", "checklist", "work"]
-    }, {
-        "id": 19,
-        "alternate": "creating-a-simple-string-search",
-        "path": "static/pages/essays/19",
-        "title": "Creating a simple string Search",
-        "description": "In this post, I'll explore how to create a simple string search by discussing a few different algorithms and libraries that can be used to implement it.",
-        "published": true,
-        "created_at": "2024-11-07",
-        "tags": ["code", "search", "knowledge", "fuzzy search", "fuzzy matching", "nlp", "string"]
-    }
+  {
+    "id": 1,
+    "alternate": "continuous-learning",
+    "path": "static/pages/essays/1",
+    "title": "Continuous Learning",
+    "description": "So, are you one of those people who doesn’t like to study? Hate diving into books? Learning is a fundamental part of our lives. In this post, I’m discussing a few things you should know about learning...",
+    "published": true,
+    "created_at": "2016-01-22",
+    "tags": [
+      "life",
+      "work",
+      "learning",
+      "study",
+      "books",
+      "knowledge",
+      "motivation"
+    ]
+  },
+  {
+    "id": 2,
+    "alternate": "syndrome-of-rush",
+    "path": "static/pages/essays/2",
+    "title": "Syndrome of Rush",
+    "description": "SThis is a brief insight about the rush and how we waste time trying to achieve more in less time. <br />Is this truly an essential quality in our society?",
+    "published": true,
+    "created_at": "2016-01-23",
+    "tags": ["life", "work", "knowledge", "motivation"]
+  },
+  {
+    "id": 3,
+    "alternate": "future-expectations-about-the-world",
+    "path": "static/pages/essays/3",
+    "title": "Future Expectations about the World",
+    "description": "This is a small thought about future of our world in terms of ourselves.",
+    "published": true,
+    "created_at": "2016-03-16",
+    "tags": ["life", "work", "knowledge", "science", "technology"]
+  },
+  {
+    "id": 4,
+    "alternate": "create-a-glossary-of-terms",
+    "path": "static/pages/essays/4",
+    "title": "Create a glossary of Terms",
+    "description": "In this post, i'll talk about a way to create a glossary of terms using python and nltk. Keep in mind that since im from Brazil, im building a glossary in portuguese, but the means to build one could be used to build a glossary in any other language.",
+    "published": true,
+    "created_at": "2016-04-08",
+    "tags": ["python", "nltk", "glossary", "terms", "knowledge", "code", "data"]
+  },
+  {
+    "id": 5,
+    "alternate": "10-python-packages-you-cant-live-without",
+    "path": "static/pages/essays/5",
+    "title": "10 python packages you cant live without",
+    "description": "As a Python developer, you should at least know that these libraries exist. If you’re already using them, thumbs up to you!",
+    "published": true,
+    "created_at": "2016-05-05",
+    "tags": ["python", "packages", "knowledge", "code"]
+  },
+  {
+    "id": 6,
+    "alternate": "review-human-compatible-by-stuart-russell",
+    "path": "static/pages/essays/6",
+    "title": "Review : Human Compatible by Stuart Russell",
+    "description": "Review of the new book written by one of the most well known personalities in the AI field.",
+    "published": true,
+    "created_at": "2020-02-09",
+    "tags": [
+      "ai",
+      "machine learning",
+      "deep learning",
+      "cognition",
+      "books",
+      "knowledge",
+      "review"
+    ]
+  },
+  {
+    "id": 7,
+    "alternate": "review-guide-for-thinking-humans-by-melanie-mitchell",
+    "path": "static/pages/essays/7",
+    "title": "Review : A.I. a Guide for Thinking Humans by Melanie Mitchell",
+    "description": "Review of the new book written by Melanie Mitchell, prof. of computer science at Portland State University and also received her PhD from Douglas Hofstadter the famous author of the book Gödel, Escher, Bach: An Eternal Golden Braid.",
+    "published": true,
+    "created_at": "2020-02-21",
+    "tags": [
+      "ai",
+      "machine learning",
+      "deep learning",
+      "cognition",
+      "books",
+      "knowledge",
+      "review"
+    ]
+  },
+  {
+    "id": 8,
+    "alternate": "review-protein-structure-prediction",
+    "path": "static/pages/essays/8",
+    "title": "Review: Protein Structure Prediction",
+    "description": "Protein Structure Prediction is another biggest challenge that mankind is looking to solve. If solved or at least partially solved it could revolutionize medicine and drug industry.",
+    "published": true,
+    "created_at": "2020-07-17",
+    "tags": [
+      "ai",
+      "machine learning",
+      "deep learning",
+      "biology",
+      "medicine",
+      "knowledge",
+      "review"
+    ]
+  },
+  {
+    "id": 9,
+    "alternate": "path-to-become-a-aws-certified-cloud-practitioner",
+    "path": "static/pages/essays/9",
+    "title": "Path to become a AWS Certified Cloud Practitioner",
+    "description": "Some cool resources to prepare for AWS Basic Certification.",
+    "published": true,
+    "created_at": "2022-02-06",
+    "tags": ["aws", "cloud", "certification", "knowledge"]
+  },
+  {
+    "id": 10,
+    "alternate": "chatgpt-can-ai-become-a-storyteller",
+    "path": "static/pages/essays/10",
+    "title": "ChatGPT: Can AI become a storyteller?",
+    "description": "ChatGPT is the new kid on the block ... But, would ChatGPT be able to became a storyteller?",
+    "published": true,
+    "created_at": "2022-12-20",
+    "tags": [
+      "ai",
+      "machine learning",
+      "deep learning",
+      "nlp",
+      "knowledge",
+      "review",
+      "storytelling"
+    ]
+  },
+  {
+    "id": 11,
+    "alternate": "chatgpt-midjourney-creating-a-story",
+    "path": "static/pages/essays/11",
+    "title": "ChatGPT + MidJourney: Creating a story",
+    "description": "This is a follow up post about ChatGPT, but this time, instead of generating the images of our characters using DALL-E I went on Midjourney v4 for that. <br />It's amazing!",
+    "published": true,
+    "created_at": "2023-01-17",
+    "tags": [
+      "ai",
+      "machine learning",
+      "deep learning",
+      "nlp",
+      "knowledge",
+      "review",
+      "storytelling",
+      "chatgpt",
+      "midjourney"
+    ]
+  },
+  {
+    "id": 12,
+    "alternate": "generative-ai-and-the-near-future-humanity",
+    "path": "static/pages/essays/12",
+    "title": "Generative AI and the Near Future Humanity",
+    "description": "This year is coming to an end (2023 if you're reading this in the future), and ahead lots of questions raised this year about generative AI will resonate over the tech industry.",
+    "published": true,
+    "created_at": "2023-12-31",
+    "tags": [
+      "ai",
+      "machine learning",
+      "deep learning",
+      "nlp",
+      "cognition",
+      "knowledge",
+      "chatgpt",
+      "midjourney"
+    ]
+  },
+  {
+    "id": 13,
+    "alternate": "harnessing-decision-trees-for-efficient-learning",
+    "path": "static/pages/essays/13",
+    "title": "Harnessing Decision Trees for Efficient Learning",
+    "description": "This is a follow up post about ChatGPT, but this time, instead of generating the images of our characters using DALL-E I went on Midjourney v4 for that. <br />It's amazing!",
+    "published": true,
+    "created_at": "2024-03-10",
+    "tags": [
+      "ai",
+      "machine learning",
+      "motivation",
+      "knowledge",
+      "decision trees"
+    ]
+  },
+  {
+    "id": 14,
+    "alternate": "does-ai-generate-art",
+    "path": "static/pages/essays/14",
+    "title": "Does AI generate art?",
+    "description": "Much has been discussed about AI and art. But, can AI really generate art?",
+    "published": true,
+    "created_at": "2024-09-20",
+    "tags": ["ai", "machine learning", "knowledge", "human creativity", "art"]
+  },
+  {
+    "id": 15,
+    "alternate": "python-expert-path",
+    "path": "static/pages/essays/15",
+    "title": "Python Expert Path",
+    "description": "A simple, but hopefully useful guide to become a Python expert.",
+    "published": true,
+    "created_at": "2024-09-24",
+    "tags": ["python", "learning", "study", "books", "knowledge", "motivation"]
+  },
+  {
+    "id": 16,
+    "alternate": "os-12-mandamentos-da-sagrada-bolhadev",
+    "path": "static/pages/essays/16",
+    "title": "Os 12 Mandamentos da Sagrada #bolhaDev",
+    "description": "Eis aqui os 12 mandamentos da sagrada #bolhaDev. Ao longo dos anos muito foi sendo discutido, principalmente, no Twitter o que era bom ou ruim dentro da bolha de desenvolvimento.<br /> Esse é apenas um apanhado de 12 principais pontos que sempre foram colocados como pau de conversa e discórdia.",
+    "published": true,
+    "created_at": "2024-09-25",
+    "tags": ["life", "work", "fun", "bolhaDev"]
+  },
+  {
+    "id": 17,
+    "alternate": "self-organizing-map",
+    "path": "static/pages/essays/17",
+    "title": "Self-Organizing Map (Kohonen Map)",
+    "description": "An unsupervised machine learning algorithm based on the premise that neurons closer to the data in a high-dimensional space can be represented as a 2D mapping surface.",
+    "published": false,
+    "created_at": "2024-09-20",
+    "tags": [
+      "ai",
+      "machine learning",
+      "knowledge",
+      "self-organizing map",
+      "som",
+      "clustering"
+    ]
+  },
+  {
+    "id": 18,
+    "alternate": "check-in-list-for-your-code-review",
+    "path": "static/pages/essays/18",
+    "title": "Check-in list for your Code Review",
+    "description": "Checklist of what I think is important during a code review (given you might be a reviewer or a submitter).<br />Hopefully this checklist will help you in remember some minimal requirements to check.",
+    "published": true,
+    "created_at": "2024-10-20",
+    "tags": ["code", "review", "knowledge", "checklist", "work"]
+  },
+  {
+    "id": 19,
+    "alternate": "creating-a-simple-string-search",
+    "path": "static/pages/essays/19",
+    "title": "Creating a simple string Search",
+    "description": "In this post, I'll explore how to create a simple string search by discussing a few different algorithms and libraries that can be used to implement it.",
+    "published": true,
+    "created_at": "2024-11-07",
+    "tags": [
+      "code",
+      "search",
+      "knowledge",
+      "fuzzy search",
+      "fuzzy matching",
+      "nlp",
+      "string"
+    ]
+  },
+  {
+    "id": 20,
+    "alternate": "bluesky-writing-a-bot-using-atprotocol",
+    "path": "static/pages/essays/20",
+    "title": "BlueSky: Writing a Bot using ATProtocol",
+    "description": "Let's explore a little bit the ATProtocol and how to create a simple bot using it.",
+    "published": true,
+    "created_at": "2024-12-14",
+    "tags": ["code", "BlueSky", "knowledge", "bot", "python", "atprotocol"]
+  },
+  {
+    "id": 21,
+    "alternate": "expectations-for-2025",
+    "path": "static/pages/essays/21",
+    "title": "Expectations for 2025",
+    "description": "This is my take on what to expect for 2025. Keep in mind that this is my personal opinion and it's based on possibilities and trends that I've been following.",
+    "published": false,
+    "created_at": "2024-12-31",
+    "tags": ["future", "knowledge", "trends", "knowledge", "ai", "programming"]
+  },
+  {
+    "id": 22,
+    "alternate": "tries-creating-a-simple-string-search",
+    "path": "static/pages/essays/20",
+    "title": "Tries: Creating a simple string Search",
+    "description": "Previously, I presented several ways to create a simple string search using different algorithms. In this post, I'll explore the same concept, this time using Tries.",
+    "published": false,
+    "created_at": "2024-11-11",
+    "tags": ["code", "search", "knowledge", "trie", "nlp", "string"]
+  }
 ]

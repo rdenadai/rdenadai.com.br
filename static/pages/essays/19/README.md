@@ -50,7 +50,7 @@ The idea behind Levenstein is to check what's need to be changed on the fist wor
 
 On Wikipedia you can see the formula for the algorithm... But I just copy and paste here:
 
-![Levenstein formula](levenstein.jpg)
+![Levenstein formula](/static/pages/essays/19/levenstein.jpg)
 
 Bellow is the alogorithm implemented in Python. Using a matrix to store the values I think it's easier to observe and understand the algorithm (at least for me ... hahahaha).
 
