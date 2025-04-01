@@ -68,9 +68,6 @@ Therefore, I believe this is an extremely useful tip: if you notice code that ne
 
 ## Update
 
-Depois de fazer essa postagem, meu conhecido trouxe umas informações legais que a equipe dele compartilho.
-Uma pirâmide de Code Review. Achei bem interessante e resolvi deixar aqui como um update desse post e o link para o post original que trouxe essa pirâmide como referência.
-
 After making this post, my acquaintance shared some cool information that his team provided.
 A Code Review pyramid. I found it really interesting and decided to include it here as an update to this post, along with the link to the original post that brought this pyramid as a reference.
 

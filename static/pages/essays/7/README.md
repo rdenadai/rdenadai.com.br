@@ -25,7 +25,7 @@ The idea that pattern manipulation of the most superficial sort can yield things
 
 Taking this into account and of course the whole new A.I. spring that's happening right now, prof. Mitchell (as state above) presents the reason of why writing the book.
 
-"_This book arose from my attempt to understand the true state of affairs in artificial intelligence—what computers can do now, and what we can expect from them over the next decades._"
+"_This book arose from my attempt to understand the true state of affairs in artificial intelligence, what computers can do now, and what we can expect from them over the next decades._"
 
 ## The Roots of Artificial Intelligence
 

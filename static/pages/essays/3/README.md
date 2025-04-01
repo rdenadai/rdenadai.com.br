@@ -21,7 +21,7 @@ Read more...
 [Human Evolution 101][7]
 
 > **Is evolution over, for us or for the other apes?**
-> Certainly not. Humans are continuing to evolve, but now the evolution is driven as much by our culture and the technology we’ve invented as by our biology. And other animals, including the apes, are also continuing to evolve—especially now, in response to the huge changes in their environment that humans have made.
+> Certainly not. Humans are continuing to evolve, but now the evolution is driven as much by our culture and the technology we’ve invented as by our biology. And other animals, including the apes, are also continuing to evolve (especially now), in response to the huge changes in their environment that humans have made.
 
 [1]: https://www.google.com/selfdrivingcar/
 [2]: http://www.spacex.com/

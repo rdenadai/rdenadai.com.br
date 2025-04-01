@@ -1,11 +1,11 @@
 **So, you're one of those people who doesn’t like studying?**
-Hate hitting the books? Well, then this post might not be for you! But don’t worry, life is full of both types—those who love and those who hate studying—so you’ll definitely find your match.
+Hate hitting the books? Well, then this post might not be for you! But don’t worry, life is full of both types, those who love and those who hate studying, so you’ll definitely find your match.
 
 **But really, what drives us to study?**
 
 For some, the answer is quick and straightforward: "I study because I want a good job and to make lots of money."
 
-That seems like a reasonable answer, but it's a bit too simplistic. After all, not everyone who studies makes a lot of money, and the reverse is also true—not everyone who earns a lot of money has studied extensively.
+That seems like a reasonable answer, but it's a bit too simplistic. After all, not everyone who studies makes a lot of money, and the reverse is also true, not everyone who earns a lot of money has studied extensively.
 
 Limiting our motivation for studying to just getting a well-paid job is short-sighted. It makes me wonder if people who think this way aren’t seeing the bigger picture.
 
@@ -36,9 +36,9 @@ The possibilities are endless, but I believe the best way to start is as follows
 - Always seek out information related to those topics.
 - Find experts or leaders in the field and follow their work as much as possible.
 - Join groups where you can interact with others, as these can be excellent sources of information.
-- And most importantly, even if you're not interested in a particular topic, take the time to learn about it—it might open your eyes to new ideas!
+- And most importantly, even if you're not interested in a particular topic, take the time to learn about it (it might open your eyes to new ideas).
 
-Following this approach, I discovered a really cool site called P2PU ([https://p2pu.org/](https://p2pu.org/)) that lets you test your knowledge on various subjects. It might even open your mind to topics you never considered. Check it out—you might be surprised!
+Following this approach, I discovered a really cool site called P2PU ([https://p2pu.org/](https://p2pu.org/)) that lets you test your knowledge on various subjects. It might even open your mind to topics you never considered. Check it out (you might be surprised)!
 
 ![Motivation][2]
 

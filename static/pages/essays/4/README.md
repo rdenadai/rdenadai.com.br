@@ -1,6 +1,6 @@
 In my current job, we are building a Data Dictionary System, and one key requirement is to ensure that the names of tables and attributes maintain a certain level of consistency and correctness.
 
-The Data Administration (D.A.) team already has a glossary in place, but they don’t fully trust it—and with good reason—since there are duplicated terms and conflicting definitions.
+The Data Administration (D.A.) team already has a glossary in place, but they don’t fully trust it, and with good reason, since there are duplicated terms and conflicting definitions.
 
 In a discussion with my manager, I suggested building a new glossary using words from our language (Portuguese, as we are based in Brazil) and creating a set of rules to guide this process.
 
