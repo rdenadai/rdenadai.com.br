@@ -1,17 +1,18 @@
-FROM python:3.12.6-alpine3.20
+FROM python:3.12.10-alpine3.21
 
 WORKDIR /code
 
 RUN apk update && \
     apk add dumb-init curl && \
-    curl -LsSf https://astral.sh/uv/install.sh | sh && \
     rm -rf /var/cache/apk/*
 
-COPY ./pyproject.toml ./README.md /code/
+ADD https://astral.sh/uv/install.sh /uv-installer.sh
+RUN sh /uv-installer.sh && rm /uv-installer.sh
+ENV PATH="/root/.local/bin/:$PATH"
 
-ENV UV_TOOL_BIN_DIR=/root/.cargo/bin/
-ENV PATH=$UV_TOOL_BIN_DIR:$PATH
-RUN uv sync
+COPY ./pyproject.toml ./README.md ./uv.lock /code/
+
+RUN uv sync --frozen
 
 # ENTRYPOINT ["dumb-init", "--"]
 # CMD ["tail", "-f", "/dev/null"]

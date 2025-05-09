@@ -292,11 +292,31 @@
   {
     "id": 22,
     "alternate": "tries-creating-a-simple-string-search",
-    "path": "static/pages/essays/20",
+    "path": "static/pages/essays/22",
     "title": "Tries: Creating a simple string Search",
     "description": "Previously, I presented several ways to create a simple string search using different algorithms. In this post, I'll explore the same concept, this time using Tries.",
     "published": false,
     "created_at": "2024-11-11",
     "tags": ["code", "search", "knowledge", "trie", "nlp", "string"]
+  },
+  {
+    "id": 23,
+    "alternate": "writing-simple-code",
+    "path": "static/pages/essays/23",
+    "title": "Writing Simple Code",
+    "description": "How can you write simple code? In this post, I explore a bit about the learning curve shown in an anecdotal graph I came across on the internet.",
+    "published": true,
+    "created_at": "2025-05-09",
+    "tags": ["code", "knowledge", "simplicity", "work"]
+  },
+  {
+    "id": 24,
+    "alternate": "review-learning-functional-programming",
+    "path": "static/pages/essays/24",
+    "title": "Review: Learning Functional Programming",
+    "description": "This is my review of the book Learning Functional Programming by Jack Widman, that was released in august 2022. The idea here is also to discuss a little bit more about functional programming covering topics like currying, partial application, and others.",
+    "published": false,
+    "created_at": "2025-05-08",
+    "tags": ["code", "books", "knowledge", "review", "functional programming"]
   }
 ]
