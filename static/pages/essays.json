@@ -266,7 +266,8 @@
       "fuzzy search",
       "fuzzy matching",
       "nlp",
-      "string"
+      "string",
+      "programming"
     ]
   },
   {
@@ -277,7 +278,15 @@
     "description": "Let's explore a little bit the ATProtocol and how to create a simple bot using it.",
     "published": true,
     "created_at": "2024-12-14",
-    "tags": ["code", "BlueSky", "knowledge", "bot", "python", "atprotocol"]
+    "tags": [
+      "code",
+      "BlueSky",
+      "knowledge",
+      "bot",
+      "python",
+      "atprotocol",
+      "programming"
+    ]
   },
   {
     "id": 21,
@@ -311,12 +320,22 @@
   },
   {
     "id": 24,
-    "alternate": "review-learning-functional-programming",
+    "alternate": "differences-between-us",
     "path": "static/pages/essays/24",
+    "title": "Why are we equal?",
+    "description": "Just scattered thoughts and a consequence of some empirical experiences and/or anecdotal evidence gathered over these years.",
+    "published": true,
+    "created_at": "2025-05-22",
+    "tags": ["knowledge", "life", "equality", "motivation", "human creativity"]
+  },
+  {
+    "id": 25,
+    "alternate": "review-learning-functional-programming",
+    "path": "static/pages/essays/25",
     "title": "Review: Learning Functional Programming",
     "description": "This is my review of the book Learning Functional Programming by Jack Widman, that was released in august 2022. The idea here is also to discuss a little bit more about functional programming covering topics like currying, partial application, and others.",
     "published": false,
-    "created_at": "2025-05-08",
+    "created_at": "2025-05-10",
     "tags": ["code", "books", "knowledge", "review", "functional programming"]
   }
 ]

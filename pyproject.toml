@@ -5,15 +5,15 @@ description = "Rodolfo De Nadai personal site"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "loguru>=0.7.2",
-    "markdown>=3.7",
-    "orjson>=3.10.7",
-    "starlette[full]>=0.38.5",
-    "uvicorn[standard]>=0.30.6",
-    "xmltodict>=0.14.1",
+    "loguru>=0.7.3",
+    "markdown>=3.8",
+    "orjson>=3.10.18",
+    "starlette[full]>=0.46.2",
+    "uvicorn[standard]>=0.34.2",
+    "xmltodict>=0.14.2",
 ]
 
 [tool.uv]
 dev-dependencies = [
-    "ruff>=0.6.5",
+    "ruff>=0.11.11",
 ]
