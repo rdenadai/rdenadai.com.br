@@ -43,6 +43,8 @@ Here you might find papers, blogs, books, articles, etc. that I've read and / or
 ### <a href="#docs-python"><div id="docs-python" class="text-md">Python</div></a>
 
 - [Python](https://docs.python.org/3/)
+- [Fluent Python](https://pythonfluente.com/)
+- [Think Python](https://allendowney.github.io/ThinkPython/)
 - [Python Cheatsheet](https://www.pythoncheatsheet.org/)
 - [Real Python](https://realpython.com/)
 - [What the f\*ck Python!](https://github.com/satwikkansal/wtfpython)
@@ -67,6 +69,7 @@ Here you might find papers, blogs, books, articles, etc. that I've read and / or
 - [Rust Atomics and Locks](https://marabos.nl/atomics/foreword.html)
 - [The Rustonomicon](https://doc.rust-lang.org/nomicon/)
 - [Welcome to Comprehensive Rust](https://google.github.io/comprehensive-rust/index.html)
+- [Learn Rust 101](https://rust-lang.guide/intro/index.html)
 - [Rust Language Cheat Sheet](https://cheats.rs/)
 
 ### <a href="#docs-javascript"><div id="docs-javascript" class="text-md">Javascript</div></a>
@@ -89,6 +92,8 @@ Here you might find papers, blogs, books, articles, etc. that I've read and / or
 
 - [The Twelve-Factor App](https://12factor.net/)
 - [Catálogo de Code Smells ORM](https://github.com/spgroup/ORM-Smells-Catalog)
+- [Design Patterns](https://refactoring.guru/design-patterns)
+- [Cloud Computing Patterns](https://www.cloudcomputingpatterns.org/)
 
 ### <a href="#essays-fp"><div id="essays-fp" class="text-md">Functional Programming</div></a>
 
