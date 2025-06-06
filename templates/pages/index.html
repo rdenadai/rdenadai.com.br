@@ -1,4 +1,23 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block header_card %}
+<meta name="title" content="Rodolfo De Nadai" />
+<meta name="description" content="Main site: Rodolfo De Nadai" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Rodolfo De Nadai" />
+<meta property="og:description" content="Main site: Rodolfo De Nadai" />
+<meta property="og:url" content="https://rdenadai.com.br" />
+<meta
+  property="og:image"
+  content="https://rdenadai.com.br/static/img/cover.jpg"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Rodolfo De Nadai" />
+<meta name="twitter:description" content="Main site: Rodolfo De Nadai" />
+<meta name="twitter:site" content="https://rdenadai.com.br" />
+<meta
+  name="twitter:image"
+  content="https://rdenadai.com.br/static/img/cover.jpg"
+/>
+{% endblock %} {% block content %}
 <div>
   <div class="md:rounded-lg md:shadow md:dark:shadow-gray-500">
     <figure
@@ -12,8 +31,7 @@
     >
       <p class="image" style="width: 25%; height: 25%">
         <img
-          class="rounded-full"
-          style="padding: 8px; background-color: #fff"
+          class="rounded-full p-1 md:p-2 bg-white"
           src="/static/img/me.jpg"
           alt="Myself using a black hat and drinking a beer"
           loading="lazy"

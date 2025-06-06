@@ -2,17 +2,11 @@
 
 ---
 
-**INTJ-T, 🐍, 🦀, 🐫, 🤖**
+**INTJ-T, 🐍, 🦀, 🐫, 🤖, 🍺, 👽 I'm not saying it was Aliens**
 
 I'm a middle-aged software developer from Brazil, eager to learn more about the world and better understand people's strange and sometimes bizarre views.
 
 As a software developer, I enjoy building programs to help others. The thing that really drives me is the pursuit of knowledge.
-
-- 🔭 I’m currently working on Python projects and starting to learn Rust!
-- 🌱 I’m currently diving deeper into Machine Learning, Time Series analysis, and other scientific topics.
-- ⚡ Fun fact
-  - Computer geek
-  - **Star Wars** Fan!
 
 ### 🧐 My values
 
@@ -22,6 +16,7 @@ As a software developer, I enjoy building programs to help others. The thing tha
 - Do less with more
 - People have to be trustworthy
 - Nothing is impossible, except what you don't want to do
+- The only constant is change
 
 ### 🤯 Think about
 
