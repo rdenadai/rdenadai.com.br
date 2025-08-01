@@ -1,5 +1,3 @@
-## What to Expect in 2025: My Take on some Tech Trends
-
 This is my take on what to expect for 2025. Keep in mind that this is my personal opinion, based on possibilities and trends that I’ve been following closely (or lately). Let’s dive into some of the key areas I believe will shape the tech landscape next year.
 
 <audio controls>
@@ -36,8 +34,7 @@ For Rust, I would like to see more adoption in web development and machine learn
 
 ### 2. Python 3.14: JIT and Free-Threaded Improvements
 
-- [Making the Global Interpreter Lock Optional in CPython](
-https://peps.python.org/pep-0703/)
+- [Making the Global Interpreter Lock Optional in CPython](https://peps.python.org/pep-0703/)
 - [JIT Compilation](https://peps.python.org/pep-0744/)
 
 For the most of the entire lifetime one of the main complaints I've heard people mention about Python is that it's slow because of the GIL.
@@ -54,8 +51,7 @@ We will probably start to see some real improvements in Python 3.15 (which relea
 
 Hopefully, everything will go smoothly... as for the free-threading part, there is a disclaimer about it.
 
-> "*The Steering Council accepts PEP 703, but with clear proviso: that the rollout be gradual and break as little as possible, and that we can roll back any changes that turn out to be too disruptive – which includes potentially rolling back all of PEP 703 entirely if necessary (however unlikely or undesirable we expect that to be).*"
-
+> "_The Steering Council accepts PEP 703, but with clear proviso: that the rollout be gradual and break as little as possible, and that we can roll back any changes that turn out to be too disruptive – which includes potentially rolling back all of PEP 703 entirely if necessary (however unlikely or undesirable we expect that to be)._"
 
 > **_My Take: We will see some libraries starting to use free-threaded builds to improve performance, especially on the web platform. Python 3.15 will bring greater performance improvements, given the work done around the JIT (let's not forget the previous work that has been done since 3.11)._**
 
@@ -113,7 +109,7 @@ I really hope this continues to improve and that it gets more attention than vid
 
 With more and more AI usage (especially LLMs), this becomes a concern for lots of people. We have several reports (like this [How data centers and the energy sector can sate AI’s hunger for power](https://www.mckinsey.com/industries/private-capital/our-insights/how-data-centers-and-the-energy-sector-can-sate-ais-hunger-for-power)) this year pointing to the excessive energy usage of datacenters, and even some big tech companies are making deals to use nuclear energy to fuel datacenters ([Microsoft chooses infamous nuclear site for AI power](https://www.bbc.com/news/articles/cx25v2d7zexo)).
 
-> "*The power sector is rapidly becoming a protagonist in the AI story. Access to power has become a critical factor in driving new data center builds. As the power ecosystem grapples with meeting data centers’ voracious need for power, it faces substantial constraints, including limitations on reliable power sources, sustainability of power, upstream infrastructure for power access, power equipment within data centers, and electrical trade workers to build out facilities and infrastructure.*"
+> "_The power sector is rapidly becoming a protagonist in the AI story. Access to power has become a critical factor in driving new data center builds. As the power ecosystem grapples with meeting data centers’ voracious need for power, it faces substantial constraints, including limitations on reliable power sources, sustainability of power, upstream infrastructure for power access, power equipment within data centers, and electrical trade workers to build out facilities and infrastructure._"
 
 I don't know about you, but this is probably a trend that will continue in 2025!
 

@@ -38,7 +38,7 @@ async def load_essays_data():
 def get_posted_at(posted: str) -> str:
     now = date.today()
     days_ago = (now - datetime.strptime(posted, "%Y-%m-%d").date()).days
-    post_passed_time = f"{days_ago} days ago" if days_ago > 1 else "yesterday"
+    post_passed_time = f"{days_ago} days ago" if days_ago > 1 else "today"
     if days_ago >= 365:
         post_passed_time = f"{days_ago // 365} years ago"
     return post_passed_time

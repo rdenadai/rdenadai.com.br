@@ -337,5 +337,15 @@
     "published": false,
     "created_at": "2025-05-10",
     "tags": ["code", "books", "knowledge", "review", "functional programming"]
+  },
+  {
+    "id": 26,
+    "alternate": "last-programming-language-you-will-learn",
+    "path": "static/pages/essays/26",
+    "title": "The Last Programming Language you will Learn",
+    "description": "Everyone has their own opinion about the first programming language you should learn, but in this post I will talk about how much this matter and in the long run, and if the first language you learn will stay forever in your life.",
+    "published": true,
+    "created_at": "2025-08-01",
+    "tags": ["knowledge", "life", "work", "motivation", "programming", "code"]
   }
 ]

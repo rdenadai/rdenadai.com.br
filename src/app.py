@@ -20,9 +20,18 @@ N_PAGE = 5
 
 TEMPLATES = Jinja2Templates(directory="templates")
 
+MARKDOWN_DEFAULT_CONFIG = {
+    "extensions": [
+        "markdown.extensions.fenced_code",
+        "markdown.extensions.tables",
+        "markdown.extensions.nl2br",
+    ],
+    "tab_length": 2,
+}
+
 
 async def load_default_route(request, html_page: str, markdown_file: str, tab: str):
-    content = markdown.markdown(await async_file_loader(markdown_file), tab_length=2)
+    content = markdown.markdown(await async_file_loader(markdown_file), **MARKDOWN_DEFAULT_CONFIG)
     return TEMPLATES.TemplateResponse(
         request,
         html_page,
@@ -64,11 +73,8 @@ async def essay(request):
             essay_id = int(essay_id)
 
         essay = next(essay for essay in await load_essays_data() if essay.get(field) == essay_id)
-        content = markdown.markdown(
-            await async_file_loader(f"static/pages/essays/{essay.get('id')}/README.md"),
-            tab_length=2,
-            extensions=["markdown.extensions.fenced_code"],
-        )
+        markdown_file = f"static/pages/essays/{essay.get('id')}/README.md"
+        content = markdown.markdown(await async_file_loader(markdown_file), **MARKDOWN_DEFAULT_CONFIG)
 
         return TEMPLATES.TemplateResponse(
             request,
