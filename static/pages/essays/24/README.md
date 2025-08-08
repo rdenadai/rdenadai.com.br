@@ -1,3 +1,9 @@
+<audio controls>
+    <source src="/static/pages/essays/24/notebookllm.mp3" type="audio/mpeg">
+    <source src="/static/pages/essays/24/notebookllm.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
+
 ## Disclaimer
 
 This post is nothing special, just scattered thoughts and a consequence of some empirical experiences and/or anecdotal evidence gathered over these years.  

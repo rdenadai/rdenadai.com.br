@@ -1,3 +1,9 @@
+<audio controls>
+    <source src="/static/pages/essays/26/notebookllm.mp3" type="audio/mpeg">
+    <source src="/static/pages/essays/26/notebookllm.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
+
 Nowadays there are some researchers who claim that the English language would be the ultimate programming language you would learn. I apologize, since the post title was created with the intention of being a bit of click bait to catch your attention, trying to allude to that claim.
 
 ![The hottest new programming language is English by Andrej Karpathy in 2023](/static/pages/essays/26/karpathy.jpg)
