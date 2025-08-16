@@ -36,7 +36,7 @@ I divided the list by proficiency level, starting with beginners and moving up t
 - Type Annotations
   - Basic types
 - Functions: `*args` | `**kwargs`
-- Other data structures: `namedtuple`, `queue`, `enum`, `heapq`, `MappingProxyType
+- Other data structures: `namedtuple`, `queue`, `enum`, `heapq`, `MappingProxyType`
 - StandardLib:
   - `Decimal` (float point errors)
   - `pickle`

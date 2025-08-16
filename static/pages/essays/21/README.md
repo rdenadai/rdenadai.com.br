@@ -51,7 +51,7 @@ We will probably start to see some real improvements in Python 3.15 (which relea
 
 Hopefully, everything will go smoothly... as for the free-threading part, there is a disclaimer about it.
 
-> "_The Steering Council accepts PEP 703, but with clear proviso: that the rollout be gradual and break as little as possible, and that we can roll back any changes that turn out to be too disruptive – which includes potentially rolling back all of PEP 703 entirely if necessary (however unlikely or undesirable we expect that to be)._"
+"_**The Steering Council accepts PEP 703, but with clear proviso: that the rollout be gradual and break as little as possible, and that we can roll back any changes that turn out to be too disruptive – which includes potentially rolling back all of PEP 703 entirely if necessary (however unlikely or undesirable we expect that to be).**_"
 
 > **_My Take: We will see some libraries starting to use free-threaded builds to improve performance, especially on the web platform. Python 3.15 will bring greater performance improvements, given the work done around the JIT (let's not forget the previous work that has been done since 3.11)._**
 
@@ -65,7 +65,7 @@ I'm not sure if there's a real race here, but it seems that China is really inve
 
 We will probably see some more scarce news in 2025, and maybe some people will be shocked and start saying the mantra that Quantum Computing is near!
 
-Please don't get fooled...
+> **_My Take: Please don't get fooled..._**
 
 ### 4. Generative AI: Evolving and Expanding
 
