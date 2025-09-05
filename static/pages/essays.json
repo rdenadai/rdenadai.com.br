@@ -347,5 +347,58 @@
     "published": true,
     "created_at": "2025-08-01",
     "tags": ["knowledge", "life", "work", "motivation", "programming", "code"]
+  },
+  {
+    "id": 27,
+    "alternate": "quote-from-a-philosophy-of-software-design",
+    "path": "static/pages/essays/27",
+    "title": "Quote from A Philosophy of Software Design",
+    "description": "This post is just to share a quote from the excellent book A Philosophy of Software Design, 2nd Edition by John K. Ousterhout.",
+    "published": true,
+    "created_at": "2025-09-04",
+    "tags": [
+      "knowledge",
+      "life",
+      "work",
+      "motivation",
+      "code",
+      "books",
+      "review"
+    ]
+  },
+  {
+    "id": 28,
+    "alternate": "mimicking-a-pipeline-operator-in-python",
+    "path": "static/pages/essays/28",
+    "title": "Mimicking a pipeline operator in Python",
+    "description": "Pipeline operators are a common feature in functional programming languages like Elixir and OCaml. Here I explore how to implement a simple and similar version of that operator in Python.",
+    "published": true,
+    "created_at": "2025-09-05",
+    "tags": [
+      "knowledge",
+      "learning",
+      "python",
+      "code",
+      "programming",
+      "functional programming"
+    ]
+  },
+  {
+    "id": 29,
+    "alternate": "aspects-and-usage-of-llms-in-learning-and-school",
+    "path": "static/pages/essays/29",
+    "title": "The Aspects and Usage of LLMs in Learning and School",
+    "description": ".",
+    "published": false,
+    "created_at": "2025-09-20",
+    "tags": [
+      "knowledge",
+      "life",
+      "work",
+      "motivation",
+      "llm",
+      "learning",
+      "education"
+    ]
   }
 ]
