@@ -453,7 +453,7 @@ assert all(p.price > 50 for p in filtered_expensive)
 
 total = cart.products >> apply_discount >> filter_expensive_products >> sum_prices >> to_value
 
-assert round(total, 2) - 838.88  # Total price after discount for Laptop and Monitor
+assert round(total, 2) == 838.88  # Total price after discount for Laptop and Monitor
 ```
 
 É claro que a implementação é básica e isso não nos permite ir muito a fundo em como aninhamos nossas funções, principalmente quando usamos `map` e `filter`.

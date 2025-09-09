@@ -391,7 +391,7 @@ def is_adult(person: Person) -> bool:
 
 data = [Person("Alice", 17), Person("Bob", 20), Person("Charlie", 15), Person("David", 22)]
 result = data >> is_adult >> List.to_value
-assert [person.name
+assert [person.name for person in result] == ["Bob", "David"]
 ```
 
 Very interesting, right? But wait: this class ends up using a very interesting concept we have in Python.
@@ -452,7 +452,7 @@ assert all(p.price > 50 for p in filtered_expensive)
 
 total = cart.products >> apply_discount >> filter_expensive_products >> sum_prices >> to_value
 
-assert round(total, 2) - 838.88  # Total price after discount for Laptop and Monitor
+assert round(total, 2) == 838.88  # Total price after discount for Laptop and Monitor
 ```
 
 It is clear that the implementation is basic and this does not allow us to go very deep into how we nest our functions, especially when we use `map` and `filter`.
