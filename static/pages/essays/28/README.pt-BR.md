@@ -458,7 +458,7 @@ assert round(total, 2) == 838.88  # Total price after discount for Laptop and Mo
 
 É claro que a implementação é básica e isso não nos permite ir muito a fundo em como aninhamos nossas funções, principalmente quando usamos `map` e `filter`.
 
-Em casos assim, você precisaria envelopar as funções dentro de um `lambda`, por exemplo:
+Em casos assim, você precisaria envelopar as funções dentro de um `lambda`.
 
 ```python
 @pipe

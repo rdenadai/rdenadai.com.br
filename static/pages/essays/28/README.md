@@ -1,3 +1,9 @@
+<audio controls>
+    <source src="/static/pages/essays/28/notebookllm.mp3" type="audio/mpeg">
+    <source src="/static/pages/essays/28/notebookllm.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
+
 ## Introduction
 
 I am not one of those fanatics about programming paradigms or anything like that, but I feel I have a constant drive to look for new and interesting things that might spark my curiosity.
@@ -457,7 +463,7 @@ assert round(total, 2) == 838.88  # Total price after discount for Laptop and Mo
 
 It is clear that the implementation is basic and this does not allow us to go very deep into how we nest our functions, especially when we use `map` and `filter`.
 
-In such cases, you would need to wrap the functions inside a `lambda`, for example:
+In such cases, you would need to wrap the functions inside a `lambda`.
 
 ```python
 @pipe
