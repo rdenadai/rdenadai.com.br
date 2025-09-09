@@ -192,68 +192,90 @@ Perfeito, portanto, temos a seguinte classe:
 ```python
 from __future__ import annotations
 
-import inspect
-from collections.abc import Callable, Iterator, Mapping, Sequence, Set
-from functools import partial, reduce
-from inspect import isclass
+from collections import deque
+from collections.abc import Callable, Generator, Iterator, Mapping, Sequence, Set
+from functools import partial
 from typing import Any
 
 
 class pipe:
     def __init__(self, func: Callable[..., Any]) -> None:
-        self._func: Callable[..., Any] = func
-        self._name: str = func.__name__ if hasattr(func, "__name__") else func.__class__.__name__
+        self._func = func
+        self._name = func.__name__ if hasattr(func, "__name__") else func.__class__.__name__
 
     def __rshift__(self, other: Any) -> Any:
         result = self._func
         if callable(result) and not isinstance(result, (pipe, partial)):
             result = result()
-        return other._func(result)
+        self._func = other._func
+        self._name = other._name
+        return self.__rrshift__(result)
 
-    def __rrshift__(self, other: Any) -> Any:
-        if isinstance(other, Iterator):
-            return self._func(other)
-
-        if isinstance(other, partial):
-            return self._func(other())  # type: ignore
-
-        if isclass(self._func):
-            if issubclass(self._func, Sequence):
-                return self._func(  # type: ignore
-                    other
-                    if isinstance(other, (Iterator, Sequence)) and not isinstance(other, (str, bytes, bytearray))
-                    else [other]  # type: ignore
-                )
-            elif issubclass(self._func, Mapping):
-                return self._func(other if isinstance(other, Mapping) else {other: other})  # type: ignore
-            elif issubclass(self._func, Set):
-                return self._func(other if isinstance(other, Set) or isinstance(other, Iterator) else {other})  # type: ignore
-        try:
-            signature = inspect.signature(self._func)
-            if len(signature.parameters) > 1 and not inspect.isbuiltin(self._func):
-                if isinstance(other, (Iterator, Sequence)):
-                    return self._func(*other)
-                elif isinstance(other, Mapping):
-                    return self._func(**other)
-        except ValueError:
-            ...
-
+    def __rrshift__(self, other: Any) -> Generator[Any, None, None] | Any:
+        if (
+            (isinstance(other, (Iterator, Sequence)) and self.__not_str_bytes(other))
+            or isinstance(other, Mapping)
+            or isinstance(other, Set)
+        ) and not hasattr(self._func, "_materialize"):
+            return self.__stream__(other)
         return self._func(other)
 
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
-        if not args and not kwargs:
-            return self._func()
+        return self._func(*args, **kwargs)
 
-        def partial_func(data: Any) -> Callable[..., Any]:
-            if (
-                isinstance(data, (Iterator, Sequence, Set, Mapping)) and not isinstance(data, (str, bytes, bytearray))
-            ) or self._func is partial:
-                if self._func is reduce:
-                    return self._func(args[0], data, *args[1:])
-                return self._func(*args, data, **kwargs)
-            return self._func(*args, [data], **kwargs)
+    @staticmethod
+    def filter(func: Callable[..., bool]) -> pipe:
+        def __filter(data: Any) -> Generator[Any, None, None]:
+            result = func(data)
+            result = next(result) if isinstance(result, Generator) else result
+            if result:
+                yield data
 
-        return pipe(partial_func)
+        return pipe(__filter)
+
+    @staticmethod
+    def reduce(
+        func: Callable[..., Any] | None = None,
+        *,
+        initializer: Any = None,
+    ) -> Callable[[Callable[..., Any]], pipe]:
+        _initializer = initializer
+
+        def __reduce_dec(func: Callable[..., Any]) -> pipe:
+            def __reduce(data: Any) -> Any:
+                nonlocal _initializer
+                if _initializer is None:
+                    _initializer = data
+                    yield data
+                else:
+                    result = func(_initializer, data)
+                    _initializer = next(result) if isinstance(result, Generator) else result
+                    yield _initializer
+
+            return pipe(__reduce)
+
+        if func is not None:
+            return __reduce_dec(func)
+        return __reduce_dec
+
+    def __stream__(self, other: Any) -> Generator[Any, None, None]:
+        def __generator_result(item: Any) -> Generator[Any, None, None]:
+            result = self._func(item)
+            if isinstance(result, Generator):
+                yield from result
+            else:
+                yield result
+
+        if isinstance(other, Mapping):
+            yield from __generator_result(other)
+        elif getattr(self._func, "__name__", None) == "__reduce":
+            yield deque((next(__generator_result(item)) for item in other), maxlen=1).pop()
+        else:
+            for item in other:
+                yield from __generator_result(item)
+
+    def __not_str_bytes(self, item: Any) -> bool:
+        return not isinstance(item, (str, bytes, bytearray))
 ```
 
 Sim, eu sei: muito código, gigante... muita coisa para desenrolar.
@@ -262,25 +284,82 @@ Mas tudo bem, a implementação também está longe de ser perfeita ou de funcio
 
 Entretanto, funciona, e funciona muito bem para algumas coisas bem interessantes.
 
-Um detalhe importante é que precisamos envelopar todas as nossas funções com essa classe, para que possamos “empilhar” umas às outras. Como talvez queiramos usar funções como `map`, `filter` etc., você precisaria fazer algo como:
+Um detalhe importante é que precisamos envelopar todas as nossas funções com essa classe, para que possamos “empilhar” umas às outras.
+
+Para alguns casos, já criei alguns helpers para facilitar.
 
 ```python
-from functools import partial, reduce
+from collections.abc import ItemsView, Iterator, Mapping, Sequence
+from collections.abc import Set as _Set
+from functools import partial
+from typing import Any
 
-from .pipe import pipe
+from src.pipe import pipe
+from src.support.utils import from_generator, materialize
 
-map = pipe(map)
-filter = pipe(filter)
-reduce = pipe(reduce)
-partial = pipe(partial)
-to_list = pipe(list)
-to_dict = pipe(dict)
-to_set = pipe(set)
-to_tuple = pipe(tuple)
-pprint = pipe(print)
+STRUCTURAL_TYPES = (Sequence, Iterator, Mapping, _Set, ItemsView)
+
+Parcial = lambda func, *args, **kwargs: pipe(partial(func, *args, **kwargs))
+Print = pipe(print)
+
+
+@materialize
+def to_value(data: Any) -> Any:
+    return from_generator(data)
+
+
+class List:
+    @materialize
+    @staticmethod
+    def to_value(data: Any) -> list:
+        if isinstance(data, list):
+            return data
+        elif not isinstance(data, STRUCTURAL_TYPES):
+            return [data]
+        return list(data)
+
+
+class Dict:
+    @materialize
+    @staticmethod
+    def to_value(data: Any) -> dict:
+        data = from_generator(data)
+        if isinstance(data, dict):
+            return data
+        elif isinstance(data, (Sequence, Iterator)):
+            return dict(data)
+        else:
+            return {data: data}
+
+
+class Set:
+    @materialize
+    @staticmethod
+    def to_value(data: Any) -> set:
+        if isinstance(data, set):
+            return data
+        elif not isinstance(data, STRUCTURAL_TYPES):
+            return {data}
+        return set(data)
+
+
+class String:
+    @materialize
+    @staticmethod
+    def to_value(data: Any) -> str:
+        return str(from_generator(data))
+
+
+class Tuple:
+    @materialize
+    @staticmethod
+    def to_value(data: Any) -> tuple:
+        if isinstance(data, tuple):
+            return data
+        elif not isinstance(data, STRUCTURAL_TYPES):
+            return (data,)
+        return tuple(data)
 ```
-
-Com toda a certeza, qualquer programador Python, ao olhar as linhas acima, irá me amaldiçoar e a toda a minha linhagem, mas calma: isso são apenas “toy examples”; eu não espero que você faça isso em produção.
 
 Mas, feito isso, podemos brincar à vontade com nosso novo operador!
 
@@ -293,25 +372,27 @@ def add_one(x: int) -> int:
 def multiply_by_two(x: int) -> int:
     return x * 2
 
-_ = (
-    3
-    >> add_one
-    >> multiply_by_two
-    >> map(lambda x: (x, x * 10))
-    >> to_dict
-    >> pprint
-)
-# {8: 80}
+result = 3 >> add_one >> multiply_by_two >> Dict.to_value
+assert result == {8: 8}
+# {8: 8}
 ```
 
 ```python
-_ = (
-    [1, 2, 3, 4]
-    >> map(lambda x: pow(x, 2))
-    >> to_list
-    >> pprint
-)
-# [1, 4, 9, 16]
+class Person:
+    __slots__ = ("name", "age")
+
+    def __init__(self, name: str, age: int) -> None:
+        self.name = name
+        self.age = age
+
+@pipe.filter
+def is_adult(person: Person) -> bool:
+    return person.age >= 18
+
+data = [Person("Alice", 17), Person("Bob", 20), Person("Charlie", 15), Person("David", 22)]
+result = data >> is_adult >> List.to_value
+assert [person.name for person in result] == ["Bob", "David"]
+# ["Bob", "David"]
 ```
 
 Muito interessante, não? Mas calma: essa classe acaba utilizando um conceito bem interessante que temos em Python.
@@ -327,45 +408,52 @@ Não vou entrar em detalhes técnicos de como _Generators_ funcionam; você pode
 Mas, do modo como implementamos a classe _pipe_, ganhamos gratuitamente a execução parcial que um pipeline de _streaming_ com geradores nos proporcionaria!
 
 ```python
+class Product:
+    __slots__ = ("name", "price")
+
+    def __init__(self, name: str, price: float) -> None:
+        self.name = name
+        self.price = price
+
+class ShoppingCart:
+    def __init__(self) -> None:
+        self.products = []
+
+    def add_product(self, product: Product) -> None:
+        self.products.append(product)
+
+cart = ShoppingCart()
+cart.add_product(Product("Laptop", 999.99))
+cart.add_product(Product("Mouse", 25.50))
+cart.add_product(Product("Keyboard", 45.00))
+cart.add_product(Product("Monitor", 150.75))
+
 @pipe
-def generator_func() -> Generator[int, None, None]:
-    for i in range(6):
-        print(">>>", i)
-        yield i
+def apply_discount(product: Product) -> Product:
+    product.price *= 0.9  # Apply a 10% discount
+    yield product
 
-def filter_divisible_by_3(x: int) -> bool:
-    print(x % 2 == 0)
-    return x % 2 == 0
+@pipe.filter
+def filter_expensive_products(product: Product) -> bool:
+    yield product.price > 50
 
-def multiply_by_10(x: int) -> int:
-    print(x * 10)
-    return x * 10
+@pipe.reduce(initializer=0.0)
+def sum_prices(x: float, y: Product) -> float:
+    yield x + y.price
 
-print(">>> Start pipeline")
-_ = (
-    generator_func
-    >> filter(filter_divisible_by_3)
-    >> map(multiply_by_10)
-    >> to_list
-    >> pprint
+discounts = cart.products >> apply_discount >> List.to_value
+assert all(
+    abs(p.price - original_price * 0.9) < 1e-2
+    for p, original_price in zip(discounts, [999.99, 25.50, 45.00, 150.75])
 )
-# >>> Start pipeline
-# >>> 0
-# True
-# 0
-# >>> 1
-# False
-# >>> 2
-# True
-# 20
-# >>> 3
-# False
-# >>> 4
-# True
-# 40
-# >>> 5
-# False
-# [0, 20, 40]
+
+filtered_expensive = cart.products >> apply_discount >> filter_expensive_products >> List.to_value
+assert len(filtered_expensive) == 2  # Laptop and Monitor
+assert all(p.price > 50 for p in filtered_expensive)
+
+total = cart.products >> apply_discount >> filter_expensive_products >> sum_prices >> to_value
+
+assert round(total, 2) == 838.88  # Total price after discount for Laptop and Monitor
 ```
 
 É claro que a implementação é básica e isso não nos permite ir muito a fundo em como aninhamos nossas funções, principalmente quando usamos `map` e `filter`.
@@ -374,27 +462,13 @@ Em casos assim, você precisaria envelopar as funções dentro de um `lambda`, p
 
 ```python
 @pipe
-def generator_func() -> Generator[int, None, None]:
-    for i in range(6):
-        print(">>>", i)
-        yield i
+def random_number(N: int) -> int:
+    yield random.randint(1, 100)
 
-def filter_divisible_by_3(x: int) -> bool:
-    print(x % 2 == 0)
-    yield x % 2 == 0
-
-def multiply_by_10(x: int) -> int:
-    print(x * 10)
-    yield x * 10
-
-print(">>> Start pipeline")
-_ = (
-    generator_func
-    >> filter(lambda x: next(filter_divisible_by_3(x))) # Generators of generators
-    >> map(lambda x: next(multiply_by_10(x)))
-    >> to_list
-    >> pprint
-)
+numbers = range(5) >> random_number >> List.to_value
+assert len(numbers) == 5
+assert all(1 <= num <= 100 for num in numbers)
+# [69, 34, 2, 17, 90]  # Example output, will vary each run
 ```
 
 ## Conclusion
@@ -404,5 +478,7 @@ Acredito que, como pequena prova de conceito de que seria possível escrever um 
 A partir daqui não há muito o que fazer, exceto, talvez, melhorar a implementação para cobrir casos mais complexos e os buracos que deixei pelo caminho. Talvez até mudar o modo como estou relacionando cada chamada para evitar que a _stack_ fique sobrecarregada.
 
 Penso que esse post foi mais um exercício de curiosidade para mim e espero que possa ter atiçado a sua curiosidade para tentar implementar um operador de pipe na sua linguagem, ou mesmo ir aprender mais sobre Elixir ou OCaml.
+
+Se você quiser o código completo, ele está [AQUI](https://github.com/rdenadai/pipe)!
 
 No mais, é isso. Happy coding 😆!
