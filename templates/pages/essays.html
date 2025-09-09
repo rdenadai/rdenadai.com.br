@@ -14,9 +14,7 @@
       <div class="p-5">
         <h2 class="font-semibold text-2xl">
           <i class="fa-solid fa-circle-check"></i>
-          <a href="/essay/{{ essay.alternate}}" aria-label="{{ essay.title }}"
-            >{{ essay.title }}</a
-          >
+          <a href="/essay/{{ essay.alternate}}" aria-label="{{ essay.title }}">{{ essay.title }}</a>
         </h2>
         <p class="mt-2 text-justify">{{ essay.description|safe }}</p>
         <ul class="mt-6">
@@ -52,9 +50,7 @@
       <i class="fa-solid fa-angles-left"></i> Previous</a
     >
     {% else %}
-    <div
-      class="bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 text-gray-500 text-xl py-2 px-4 rounded"
-    >
+    <div class="bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 text-gray-500 text-xl py-2 px-4 rounded">
       <i class="fa-solid fa-angles-left"></i> Previous
     </div>
     {% endif %} {% if next > 0 %}
@@ -66,9 +62,7 @@
       Next <i class="fa-solid fa-angles-right"></i
     ></a>
     {% else %}
-    <div
-      class="bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 text-gray-500 text-xl py-2 px-4 rounded"
-    >
+    <div class="bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 text-gray-500 text-xl py-2 px-4 rounded">
       Next <i class="fa-solid fa-angles-right"></i>
     </div>
     {% endif %}

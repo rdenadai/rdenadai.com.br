@@ -4,25 +4,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ data.title }}" />
 <meta property="og:description" content="{{ data.description }}" />
-<meta
-  property="og:url"
-  content="https://rdenadai.com.br/ai-hype-sanity-check"
-/>
-<meta
-  property="og:image"
-  content="https://rdenadai.com.br/static/img/ai_cover.jpg"
-/>
+<meta property="og:url" content="https://rdenadai.com.br/ai-hype-sanity-check" />
+<meta property="og:image" content="https://rdenadai.com.br/static/img/ai_cover.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ data.title }}" />
 <meta name="twitter:description" content="{{ data.description }}" />
-<meta
-  name="twitter:site"
-  content="https://rdenadai.com.br/ai-hype-sanity-check"
-/>
-<meta
-  name="twitter:image"
-  content="https://rdenadai.com.br/static/img/ai_cover.jpg"
-/>
+<meta name="twitter:site" content="https://rdenadai.com.br/ai-hype-sanity-check" />
+<meta name="twitter:image" content="https://rdenadai.com.br/static/img/ai_cover.jpg" />
 {% endblock %} {% block content %}
 <div class="md:rounded-lg md:shadow md:dark:shadow-gray-500">
   <div>
@@ -42,15 +30,10 @@
         {% for question in data.questionnaire %} {% set outer_loop = loop %}
         <div>
           <div class="mt-10">
-            <span class="flex mb-5 text-left font-semibold"
-              >{{ outer_loop.index }}. {{ question.question }}</span
-            >
+            <span class="flex mb-5 text-left font-semibold">{{ outer_loop.index }}. {{ question.question }}</span>
             {% for answer in question.answers %}
             <div class="flex">
-              <label
-                class="relative flex items-center p-3 rounded-full cursor-pointer"
-                htmlFor="blue"
-              >
+              <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="blue">
                 <input
                   type="radio"
                   id="{{outer_loop.index}}-{{loop.index}}"
@@ -63,20 +46,13 @@
                 <span
                   class="absolute text-blue-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-3.5 w-3.5"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
                     <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
                   </svg>
                 </span>
               </label>
               &nbsp;
-              <label
-                class="text-left mt-3 cursor-pointer"
-                for="{{outer_loop.index}}-{{loop.index}}"
+              <label class="text-left mt-3 cursor-pointer" for="{{outer_loop.index}}-{{loop.index}}"
                 >{{ answer.text }}</label
               >
             </div>
@@ -85,15 +61,10 @@
         </div>
         {% endfor %}
         <div id="showError" class="mt-5 hidden bg-red-100 px-10 py-10 rounded">
-          <span class="text-red-500 font-semibold"
-            >{{ data.errorMessage }}</span
-          >
+          <span class="text-red-500 font-semibold">{{ data.errorMessage }}</span>
         </div>
         <hr class="mt-5" />
-        <button
-          type="submit"
-          class="bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 mt-5 rounded"
-        >
+        <button type="submit" class="bg-gray-800 hover:bg-gray-900 text-white text-xl py-2 px-4 mt-5 rounded">
           Get Your Results
         </button>
       </form>
