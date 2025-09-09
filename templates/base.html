@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rdenadai.com.br</title>
-    <meta
-      name="description"
-      content="Explore essays on technology, programming, and artificial intelligence"
-    />
+    <meta name="description" content="Explore essays on technology, programming, and artificial intelligence" />
     {% block header_card %}{% endblock %}
     <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
     <link
@@ -86,11 +83,7 @@
       >
         <div class="flex flex-row items-center">
           <h1 class="text-3xl uppercase font-semibold">Rodolfo De Nadai</h1>
-          <button
-            id="menu-toggle"
-            aria-label="Toggle Menu"
-            class="p-2 focus:outline-none ml-auto md:hidden"
-          >
+          <button id="menu-toggle" aria-label="Toggle Menu" class="p-2 focus:outline-none ml-auto md:hidden">
             <i class="fas fa-bars text-2xl"></i>
           </button>
         </div>
@@ -136,12 +129,7 @@
               </a>
             </li>
             <li>
-              <a
-                href="/rss.xml"
-                target="_blank"
-                aria-label="RSS Feed"
-                class="text-white text-2xl hover:text-gray-400"
-              >
+              <a href="/rss.xml" target="_blank" aria-label="RSS Feed" class="text-white text-2xl hover:text-gray-400">
                 <i class="fa fa-rss"></i>
               </a>
             </li>
@@ -156,38 +144,22 @@
       <div class="md:hidden">
         <ul id="mobile-menu" class="hidden flex-col space-y-2 mt-2">
           <li>
-            <a
-              href="/"
-              aria-label="Home"
-              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.index }}"
-            >
+            <a href="/" aria-label="Home" class="block p-4 border-b-2 rounded-t-lg {{ css.tab.index }}">
               <span class="font-semibold text-xl">Home</span>
             </a>
           </li>
           <li>
-            <a
-              href="/essays"
-              aria-label="Essays"
-              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.essays }}"
-            >
+            <a href="/essays" aria-label="Essays" class="block p-4 border-b-2 rounded-t-lg {{ css.tab.essays }}">
               <span class="font-semibold text-xl">Essays</span>
             </a>
           </li>
           <li>
-            <a
-              href="/profile"
-              aria-label="Profile"
-              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.profile }}"
-            >
+            <a href="/profile" aria-label="Profile" class="block p-4 border-b-2 rounded-t-lg {{ css.tab.profile }}">
               <span class="font-semibold text-xl">Profile</span>
             </a>
           </li>
           <li>
-            <a
-              href="/resume"
-              aria-label="Resume"
-              class="block p-4 border-b-2 rounded-t-lg {{ css.tab.resume }}"
-            >
+            <a href="/resume" aria-label="Resume" class="block p-4 border-b-2 rounded-t-lg {{ css.tab.resume }}">
               <span class="font-semibold text-xl">Resume</span>
             </a>
           </li>
@@ -211,39 +183,24 @@
           </li>
         </ul>
       </div>
-      <ul
-        class="hidden md:flex flex-wrap flex-col md:flex-row container md:mx-auto -mb-px"
-        style="max-width: 1024px"
-      >
+      <ul class="hidden md:flex flex-wrap flex-col md:flex-row container md:mx-auto -mb-px" style="max-width: 1024px">
         <li class="me-2">
-          <a
-            href="/"
-            aria-label="Home"
-            class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.index }}"
+          <a href="/" aria-label="Home" class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.index }}"
             ><span class="font-semibold text-xl">Home</span></a
           >
         </li>
         <li class="me-2">
-          <a
-            href="/essays"
-            aria-label="Essays"
-            class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.essays }}"
+          <a href="/essays" aria-label="Essays" class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.essays }}"
             ><span class="font-semibold text-xl">Essays</span></a
           >
         </li>
         <li class="me-2">
-          <a
-            href="/profile"
-            aria-label="Profile"
-            class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.profile }}"
+          <a href="/profile" aria-label="Profile" class="inline-block p-4 border-b-2 rounded-t-lg {{ css.tab.profile }}"
             ><span class="font-semibold text-xl">Profile</span></a
           >
         </li>
         <li class="me-2">
-          <a
-            href="/resume"
-            aria-label="Resume"
-            class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.resume }}"
+          <a href="/resume" aria-label="Resume" class="inline-block p-4 border-b-2 rounded-t-lg  {{ css.tab.resume }}"
             ><span class="font-semibold text-xl">Resume</span></a
           >
         </li>
@@ -270,4 +227,15 @@
     </div>
   </body>
   {% block script %}{% endblock %}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4QSP6YL4P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-B4QSP6YL4P");
+  </script>
 </html>
