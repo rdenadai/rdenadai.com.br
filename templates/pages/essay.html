@@ -12,12 +12,8 @@
 <meta name="twitter:site" content="https://rdenadai.com.br/essay/{{ essay.id}}" />
 <meta name="twitter:image" content="https://rdenadai.com.br/{{ essay.path }}/cover.jpg" />
 {% endblock %} {% block header_extra %}
-<link
-  id="highlightjs-theme"
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css"
-/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+<link id="highlightjs-theme" rel="stylesheet" href="/static/highlight/atom-one-dark.min.css" />
+<script src="/static/highlight/highlight.min.js"></script>
 {% endblock %} {% block script %}
 <script>
   hljs.highlightAll();

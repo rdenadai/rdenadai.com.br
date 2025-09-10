@@ -24,56 +24,25 @@
     <link
       id="github-markdown-css-theme"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.7.0/github-markdown-dark.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-dark.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       defer
     />
     {% block header_extra %}{% endblock %}
-    <style>
-      html,
-      body,
-      code,
-      pre,
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      ul,
-      ol,
-      li,
-      a,
-      hr,
-      blockquote,
-      table,
-      tr,
-      th,
-      td {
-        font-family: "Fira Code", monospace !important;
-        text-decoration: none !important;
-      }
-      .regular-list ul {
-        list-style: initial;
-        margin: initial;
-        padding: 0 0 0 40px;
-      }
-      .regular-list ul li {
-        display: list-item;
-      }
-      .regular-list ol {
-        list-style-type: decimal;
-        margin: initial;
-        padding: 0 0 0 40px;
-      }
-      .regular-list ol li {
-        display: list-item;
-      }
-    </style>
+    <link href="/static/style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/static/index.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4QSP6YL4P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-B4QSP6YL4P");
+    </script>
   </head>
   <body class="bg-white dark:bg-gray-900 text-black dark:text-white">
     <header class="bg-gray-800 text-white p-4">
@@ -227,15 +196,4 @@
     </div>
   </body>
   {% block script %}{% endblock %}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4QSP6YL4P"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-B4QSP6YL4P");
-  </script>
 </html>
