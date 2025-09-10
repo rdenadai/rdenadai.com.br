@@ -1,0 +1,40 @@
+html,
+body,
+code,
+pre,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+a,
+hr,
+blockquote,
+table,
+tr,
+th,
+td {
+  font-family: "Fira Code", monospace !important;
+  text-decoration: none !important;
+}
+.regular-list ul {
+  list-style: initial;
+  margin: initial;
+  padding: 0 0 0 40px;
+}
+.regular-list ul li {
+  display: list-item;
+}
+.regular-list ol {
+  list-style-type: decimal;
+  margin: initial;
+  padding: 0 0 0 40px;
+}
+.regular-list ol li {
+  display: list-item;
+}
