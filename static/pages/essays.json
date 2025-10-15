@@ -7,15 +7,7 @@
     "description": "So, are you one of those people who doesn’t like to study? Hate diving into books? Learning is a fundamental part of our lives. In this post, I’m discussing a few things you should know about learning...",
     "published": true,
     "created_at": "2016-01-22",
-    "tags": [
-      "life",
-      "work",
-      "learning",
-      "study",
-      "books",
-      "knowledge",
-      "motivation"
-    ]
+    "tags": ["life", "work", "learning", "study", "books", "knowledge", "motivation"]
   },
   {
     "id": 2,
@@ -65,15 +57,7 @@
     "description": "Review of the new book written by one of the most well known personalities in the AI field.",
     "published": true,
     "created_at": "2020-02-09",
-    "tags": [
-      "ai",
-      "machine learning",
-      "deep learning",
-      "cognition",
-      "books",
-      "knowledge",
-      "review"
-    ]
+    "tags": ["ai", "machine learning", "deep learning", "cognition", "books", "knowledge", "review"]
   },
   {
     "id": 7,
@@ -83,15 +67,7 @@
     "description": "Review of the new book written by Melanie Mitchell, prof. of computer science at Portland State University and also received her PhD from Douglas Hofstadter the famous author of the book Gödel, Escher, Bach: An Eternal Golden Braid.",
     "published": true,
     "created_at": "2020-02-21",
-    "tags": [
-      "ai",
-      "machine learning",
-      "deep learning",
-      "cognition",
-      "books",
-      "knowledge",
-      "review"
-    ]
+    "tags": ["ai", "machine learning", "deep learning", "cognition", "books", "knowledge", "review"]
   },
   {
     "id": 8,
@@ -101,15 +77,7 @@
     "description": "Protein Structure Prediction is another biggest challenge that mankind is looking to solve. If solved or at least partially solved it could revolutionize medicine and drug industry.",
     "published": true,
     "created_at": "2020-07-17",
-    "tags": [
-      "ai",
-      "machine learning",
-      "deep learning",
-      "biology",
-      "medicine",
-      "knowledge",
-      "review"
-    ]
+    "tags": ["ai", "machine learning", "deep learning", "biology", "medicine", "knowledge", "review"]
   },
   {
     "id": 9,
@@ -129,15 +97,7 @@
     "description": "ChatGPT is the new kid on the block ... But, would ChatGPT be able to became a storyteller?",
     "published": true,
     "created_at": "2022-12-20",
-    "tags": [
-      "ai",
-      "machine learning",
-      "deep learning",
-      "nlp",
-      "knowledge",
-      "review",
-      "storytelling"
-    ]
+    "tags": ["ai", "machine learning", "deep learning", "nlp", "knowledge", "review", "storytelling"]
   },
   {
     "id": 11,
@@ -167,16 +127,7 @@
     "description": "This year is coming to an end (2023 if you're reading this in the future), and ahead lots of questions raised this year about generative AI will resonate over the tech industry.",
     "published": true,
     "created_at": "2023-12-31",
-    "tags": [
-      "ai",
-      "machine learning",
-      "deep learning",
-      "nlp",
-      "cognition",
-      "knowledge",
-      "chatgpt",
-      "midjourney"
-    ]
+    "tags": ["ai", "machine learning", "deep learning", "nlp", "cognition", "knowledge", "chatgpt", "midjourney"]
   },
   {
     "id": 13,
@@ -186,13 +137,7 @@
     "description": "This is a follow up post about ChatGPT, but this time, instead of generating the images of our characters using DALL-E I went on Midjourney v4 for that. <br />It's amazing!",
     "published": true,
     "created_at": "2024-03-10",
-    "tags": [
-      "ai",
-      "machine learning",
-      "motivation",
-      "knowledge",
-      "decision trees"
-    ]
+    "tags": ["ai", "machine learning", "motivation", "knowledge", "decision trees"]
   },
   {
     "id": 14,
@@ -232,14 +177,7 @@
     "description": "An unsupervised machine learning algorithm based on the premise that neurons closer to the data in a high-dimensional space can be represented as a 2D mapping surface.",
     "published": false,
     "created_at": "2024-09-20",
-    "tags": [
-      "ai",
-      "machine learning",
-      "knowledge",
-      "self-organizing map",
-      "som",
-      "clustering"
-    ]
+    "tags": ["ai", "machine learning", "knowledge", "self-organizing map", "som", "clustering"]
   },
   {
     "id": 18,
@@ -259,16 +197,7 @@
     "description": "In this post, I'll explore how to create a simple string search by discussing a few different algorithms and libraries that can be used to implement it.",
     "published": true,
     "created_at": "2024-11-07",
-    "tags": [
-      "code",
-      "search",
-      "knowledge",
-      "fuzzy search",
-      "fuzzy matching",
-      "nlp",
-      "string",
-      "programming"
-    ]
+    "tags": ["code", "search", "knowledge", "fuzzy search", "fuzzy matching", "nlp", "string", "programming"]
   },
   {
     "id": 20,
@@ -278,15 +207,7 @@
     "description": "Let's explore a little bit the ATProtocol and how to create a simple bot using it.",
     "published": true,
     "created_at": "2024-12-14",
-    "tags": [
-      "code",
-      "BlueSky",
-      "knowledge",
-      "bot",
-      "python",
-      "atprotocol",
-      "programming"
-    ]
+    "tags": ["code", "BlueSky", "knowledge", "bot", "python", "atprotocol", "programming"]
   },
   {
     "id": 21,
@@ -356,15 +277,7 @@
     "description": "This post is just to share a quote from the excellent book A Philosophy of Software Design, 2nd Edition by John K. Ousterhout.",
     "published": true,
     "created_at": "2025-09-04",
-    "tags": [
-      "knowledge",
-      "life",
-      "work",
-      "motivation",
-      "code",
-      "books",
-      "review"
-    ]
+    "tags": ["knowledge", "life", "work", "motivation", "code", "books", "review"]
   },
   {
     "id": 28,
@@ -374,31 +287,16 @@
     "description": "Pipeline operators are a common feature in functional programming languages like Elixir and OCaml. Here I explore how to implement a simple and similar version of that operator in Python.",
     "published": true,
     "created_at": "2025-09-05",
-    "tags": [
-      "knowledge",
-      "learning",
-      "python",
-      "code",
-      "programming",
-      "functional programming"
-    ]
+    "tags": ["knowledge", "learning", "python", "code", "programming", "functional programming"]
   },
   {
     "id": 29,
-    "alternate": "aspects-and-usage-of-llms-in-learning-and-school",
+    "alternate": "use-of-llms-in-education",
     "path": "static/pages/essays/29",
-    "title": "The Aspects and Usage of LLMs in Learning and School",
-    "description": ".",
-    "published": false,
-    "created_at": "2025-09-20",
-    "tags": [
-      "knowledge",
-      "life",
-      "work",
-      "motivation",
-      "llm",
-      "learning",
-      "education"
-    ]
+    "title": "The Use of LLMs in Education",
+    "description": "Over decades education has changed. But nowdays we might face new challenges given the introduction of Large Language Models (LLMs) like ChatGPT, which could influence the way we learn and affecting our critical thinking.",
+    "published": true,
+    "created_at": "2025-10-15",
+    "tags": ["knowledge", "life", "work", "motivation", "llm", "learning", "education"]
   }
 ]
